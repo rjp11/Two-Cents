@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
 import CreatePageNav from '../../global/createPageNav';
-import CreateDestinationForm from '../../global/createDestinationForm';
+import CreatePOIForm from '../../global/createPOIForm';
 
-class CreatePage extends Component {
+class CreatePOI extends Component {
     render() {
         return(
             <div>
                 <h1>Create a page!</h1>
                 <CreatePageNav />
-                <CreateDestinationForm />
+                <CreatePOIForm />
                 
             </div>
         )
     }
 }
 
-export default CreatePage;
+export default CreatePOI;

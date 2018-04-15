@@ -9,7 +9,7 @@ class Nav extends Component {
                     <li><Link to='/'>Home</Link> </li>
                     <li><Link to='/login'>Login</Link></li>
                     <li><Link to='/userSearch'>User Search</Link></li>
-                    <li><Link to='/createPage'>Create Page</Link></li>
+                    <li><Link to='/create/destination'>Create Page</Link></li>
                     <li><Link to='/destination/:id'>Destination Page</Link></li>
 
                 </ul>

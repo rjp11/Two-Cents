@@ -1,14 +1,16 @@
 import React, {Component} from 'react';
 
-class CreatePageForm extends Component {
+class CreatePOIForm extends Component {
     render() {
         return (
                 <form>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Destination"/>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Destination Notes"/>
+                        <input list="destinations" class="form-control" placeholder="Destination"/>
+                        <datalist id="destinations">
+                            <option value="Chicago"/>
+                            <option value="Mallorca"/>
+                            <option value="Sicily"/>
+                        </datalist>
                     </div>
                     <div class="form-group">
                         <input list="locationTypes" class="form-control" placeholder="Location Type"/>
@@ -36,4 +38,4 @@ class CreatePageForm extends Component {
     }
 }
 
-export default CreatePageForm;
+export default CreatePOIForm;
