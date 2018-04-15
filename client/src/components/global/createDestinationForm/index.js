@@ -1,11 +1,16 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 class CreateDestinationForm extends Component {
+    
     render() {
         return (
                 <form>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Destination"/>
+                        <input list='destinations' class="form-control" placeholder="Destination"/>
+                        <datalist id='destinations'>
+
+                        </datalist>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Destination Notes"/>

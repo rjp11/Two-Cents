@@ -4,10 +4,7 @@ const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const apiRoutes = require("./routes/apiRoutes");
-const mongoose = require("mongoose");
-
-// We'll have to change this for production!
-mongoose.connect("mongodb://localhost/product_db");
+var db = require("./models");
 
 // Serve up static assets
 app.use(express.static("client/build"));
@@ -27,6 +24,8 @@ app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-app.listen(PORT, function() {
-  console.log(`🌎 ==> Server now on port ${PORT}!`);
+db.sequelize.sync().then(function(){
+  app.listen(PORT, function(){
+    console.log(`🌎 ==> Server now on port ${PORT}!`);
+  });
 });
