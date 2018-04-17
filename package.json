@@ -21,6 +21,7 @@
     "axios": "^0.16.2",
     "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.17.2",
+    "detect-port": "^1.2.2",
     "express": "^4.15.4",
     "express-session": "^1.15.6",
     "fs": "^0.0.1-security",
