@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 const app = express();
 const apiRoutes = require("./routes/apiRoutes");
 // for sequelize ORM
@@ -32,7 +32,6 @@ app.get("*", function(req, res) {
 
 db.sequelize.sync().then(function(){
   app.listen(PORT, function(){
-    console.log(process.env.PORT);
     console.log(`🌎 ==> Server now on port ${PORT}!`);
   });
 });
