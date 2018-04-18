@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
+import LoginForm from '../../global/loginForm';
 
 class LogIn extends Component {
     render() {
         return(
-            <h1>Log In</h1>
+            <div>
+                <h1>Log In</h1>
+                <LoginForm/>
+            </div>
         )
     }
 }
