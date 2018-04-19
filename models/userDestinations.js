@@ -4,9 +4,13 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        destination_id: {
-            type: DataTypes.INTEGER,
+        destination: {
+            type: DataTypes.STRING,
             allowNull: false
+        },
+        notes: {
+            type: DataTypes.STRING,
+            allowNull: true
         }
     });
 

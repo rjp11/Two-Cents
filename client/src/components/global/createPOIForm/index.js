@@ -4,35 +4,36 @@ class CreatePOIForm extends Component {
     render() {
         return (
                 <form>
-                    <div class="form-group">
-                        <input list="destinations" class="form-control" placeholder="Destination"/>
+                    <div className="form-group">
+                        <input list="destinations" className="form-control" placeholder="Destination"/>
                         <datalist id="destinations">
                             <option value="Chicago"/>
                             <option value="Mallorca"/>
                             <option value="Sicily"/>
                         </datalist>
                     </div>
-                    <div class="form-group">
-                        <input list="locationTypes" class="form-control" placeholder="Location Type"/>
+                    <div className="form-group">
+                        <input list="locationTypes" className="form-control" placeholder="Location Type"/>
                         <datalist id="locationTypes">
                             <option value="Casual Eats" />
                             <option value="Fine Dining" />
                             <option value="Lodging" />
                             <option value="Shopping" />
+                            <option value="Cultural Experience" />
                         </datalist>
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Location Name"/>
+                    <div className="form-group">
+                        <input type="text" className="form-control" placeholder="Location Name"/>
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Location Description"/>
+                    <div className="form-group">
+                        <input type="text" className="form-control" placeholder="Location Description"/>
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Image Link"/>
+                    <div className="form-group">
+                        <input type="text" className="form-control" placeholder="Image Link"/>
                     </div>
 
 
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" className="btn btn-default">Submit</button>
                 </form>
         )
     }

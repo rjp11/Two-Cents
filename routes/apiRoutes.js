@@ -4,16 +4,17 @@ const passport = require("../config/passport");
 
 const db = require("../models/");
 
-// router.get("/destinations", (req, res) => 
-//     db.Destination.findAll({})
-//         .then(dbDestinations =>
-//             res.json(dbDestinations))
-// );
+router.get("/destinations", (req, res) => 
+    db.Destination.findAll({})
+        .then(dbDestination =>
+            res.json(dbDestination))
+);
 
 router.post("/userDestinations", (req, res) =>
     db.UserDestinations.create({
         "user_id": req.body.user_id,
-        "destination_id": req.body.destination_id
+        "destination": req.body.destination,
+        "notes": req.body.notes
     }).then(dbUserDestinations =>
         res.json(dbUserDestinations))
 );

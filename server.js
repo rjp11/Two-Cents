@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 // Use apiRoutes
 app.use("/api", apiRoutes);
 // Use HTML Routes
-app.use(htmlRoutes);
+//app.use(htmlRoutes);
 
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
