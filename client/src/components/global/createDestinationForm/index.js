@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-let api = axios.create({ baseUrl: 'http://localhost:3000'})
+
 
 class CreateDestinationForm extends Component {
     state = {
@@ -47,12 +47,13 @@ class CreateDestinationForm extends Component {
         return (
                 <form>
                     <div className="form-group">
-                            <input type="text" 
+                        <input type="text" 
                             className="form-control" 
                             placeholder="User ID"
                             name="user_id"
                             value={this.state.user_id}
-                            onChange={this.handleInputChange}/>
+                            onChange={this.handleInputChange}
+                        />
                     </div>
                     <div className="form-group">
                         <input list='destinations' 
@@ -60,11 +61,11 @@ class CreateDestinationForm extends Component {
                             placeholder="Destination"
                             name="destination"
                             value={this.state.destination}
-                            onChange={this.handleInputChange}/>
-
-                                <datalist id='destinations'>
-                                    { allDestinations }
-                                </datalist>
+                            onChange={this.handleInputChange}
+                        />
+                            <datalist id='destinations'>
+                                { allDestinations }
+                            </datalist>
                     </div>
                     <div className="form-group">
                         <input type="text" 
@@ -72,11 +73,13 @@ class CreateDestinationForm extends Component {
                             placeholder="Destination Notes"
                             name="notes"
                             value={this.state.notes}
-                            onChange={this.handleInputChange}/>
+                            onChange={this.handleInputChange}
+                        />
                     </div>
-
-
-                    <button type="submit" className="btn btn-default" onClick={this.addDestinationHandler}>Submit</button>
+                    <button type="submit" 
+                        className="btn btn-default" 
+                        onClick={this.addDestinationHandler}
+                    >Submit</button>
                 </form>
         )
     }

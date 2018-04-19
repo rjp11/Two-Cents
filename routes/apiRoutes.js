@@ -19,6 +19,19 @@ router.post("/userDestinations", (req, res) =>
         res.json(dbUserDestinations))
 );
 
+router.post("/poi", (req, res) =>
+    db.POI.create({
+        "user_id": req.body.user_id,
+        "destination": req.body.destination,
+        "poi_type": req.body.poi_type,
+        "poi_name": req.body.poi_name,
+        "poi_address": req.body.poi_address,
+        "poi_description": req.body.poi_description,
+        "image_url": req.body.image_url
+    }).then(dbPOI =>
+        res.json(dbPOI))
+);
+
 router.post("/add/destination", (req, res) =>
     db.Destination.create({
         "name": req.body.name

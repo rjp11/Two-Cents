@@ -4,8 +4,8 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: true
         },
-        destination_id: {
-            type: DataTypes.INTEGER,
+        destination: {
+            type: DataTypes.STRING,
             allowNull: true
         },
         poi_type: {
@@ -18,7 +18,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         poi_address: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         poi_description: {
             type: DataTypes.STRING,
