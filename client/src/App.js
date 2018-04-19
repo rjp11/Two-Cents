@@ -10,6 +10,7 @@ import CreatePage from './components/pages/createPage';
 import CreatePOI from './components/pages/createPOI';
 import DestinationPage from './components/pages/destinationPage';
 import SignUpPage from './components/pages/signUpPage';
+import ProfilePage from './components/pages/profile';
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
           <Route exact path='/create/poi' component={CreatePOI} />
           <Route path='/destination/:id' component={DestinationPage} />
           <Route exact path='/signup' component={SignUpPage} />
+          <Route exact path='/profile' component={ProfilePage} />
         </div>
       </Router>
     );
