@@ -5,18 +5,18 @@ class CreateDestinationForm extends Component {
     render() {
         return (
                 <form>
-                    <div class="form-group">
-                        <input list='destinations' class="form-control" placeholder="Destination"/>
+                    <div className="form-group">
+                        <input list='destinations' className="form-control" placeholder="Destination"/>
                         <datalist id='destinations'>
 
                         </datalist>
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Destination Notes"/>
+                    <div className="form-group">
+                        <input type="text" className="form-control" placeholder="Destination Notes"/>
                     </div>
 
 
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" className="btn btn-default">Submit</button>
                 </form>
         )
     }
