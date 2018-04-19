@@ -9,6 +9,7 @@ import UserSearch from './components/pages/userSearch';
 import CreatePage from './components/pages/createPage';
 import CreatePOI from './components/pages/createPOI';
 import DestinationPage from './components/pages/destinationPage';
+import SignUpPage from './components/pages/signUpPage';
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
           <Route exact path='/create/destination' component={CreatePage} />
           <Route exact path='/create/poi' component={CreatePOI} />
           <Route path='/destination/:id' component={DestinationPage} />
+          <Route exact path='/signup' component={SignUpPage} />
         </div>
       </Router>
     );

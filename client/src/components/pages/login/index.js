@@ -7,6 +7,7 @@ class LogIn extends Component {
             <div>
                 <h1>Log In</h1>
                 <LoginForm/>
+                <script type="text/javascript" src="../../../../public/js/login.js"></script>
             </div>
         )
     }

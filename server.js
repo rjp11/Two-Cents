@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const apiRoutes = require("./routes/apiRoutes");
+const htmlRoutes = require("./routes/htmlRoutes")
 // for sequelize ORM
 const db = require("./models");
 // for passport and authentication
@@ -18,6 +19,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // Use apiRoutes
 app.use("/api", apiRoutes);
+// Use HTML Routes
+app.use(htmlRoutes);
 
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));

@@ -16,7 +16,7 @@ class LoginForm extends Component {
                     <button type="submit" className="btn btn-default">Login</button>
                 </form>
     
-                <p>Or sign up <a href="/">here</a></p>
+                <p>Or sign up <a href="/signup">here</a></p>
             </div>
         )
     }
