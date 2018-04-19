@@ -57,7 +57,6 @@ class CreateDestinationForm extends Component {
                     </div>
                     <div className="form-group">
                         <select className="form-control" 
-                            placeholder="Destination"
                             name="destination"
                             value={this.state.destination}
                             onChange={this.handleInputChange}

@@ -4,11 +4,31 @@ const passport = require("../config/passport");
 
 const db = require("../models/");
 
+// GET ALL DESTINATIONS FROM DATABASE TO POPULATE THE DESTINATION PULLDOWN MENU ON CREATE DESTINATION PAGE
 router.get("/destinations", (req, res) => 
     db.Destination.findAll({})
         .then(dbDestination =>
             res.json(dbDestination))
 );
+
+// GET ALL DESTINATIONS YOU'VE CREATED A PERSONAL PAGE FOR ON CREATE POI FORM
+router.get("/destinations/:userID", (req, res) => 
+    db.UserDestinations.findAll({ 
+        where: {user_id : req.params.userID}
+     }).then(data =>
+        res.json(data))
+);
+
+// GET ALL POIs FOR A GIVEN DESTINATION
+// router.get("/poi/:userID/:destination", (req, res) => 
+//     db.POI.findAll({
+//         where: {
+//             user_id : req.params.userID,
+//             destination: req.params.destination
+//         }
+//     }).then(data =>
+//         res.json(data))
+// );
 
 router.post("/userDestinations", (req, res) =>
     db.UserDestinations.create({
