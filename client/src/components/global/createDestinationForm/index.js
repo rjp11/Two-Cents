@@ -29,18 +29,18 @@ class CreateDestinationForm extends Component {
         axios.post('/api/userDestinations/', data).then(data => console.log("Success!"));
     }
 
-    // componentDidMount(){
-    //     axios.get('http:localhost:3000/api/destinations').then((res) => {
-    //         console.log(res.data);
-    //         this.setState({
-    //             allDests: res.data
-    //         })
-    //     });
-    // }
+    componentDidMount = () => {
+        axios.get('/api/destinations').then((res) => {
+            console.log(res.data);
+            this.setState({
+                allDests: res.data
+            })
+        });
+    }
 
     render() {
         const allDestinations = this.state.allDests.map(destination => {
-            return ( <option key={destination.id} value={destination.name} />
+            return ( <option key={destination.id} value={destination.name}>{destination.name}</option>
             )
         });
 
@@ -56,16 +56,15 @@ class CreateDestinationForm extends Component {
                         />
                     </div>
                     <div className="form-group">
-                        <input list='destinations' 
-                            className="form-control" 
+                        <select className="form-control" 
                             placeholder="Destination"
                             name="destination"
                             value={this.state.destination}
                             onChange={this.handleInputChange}
-                        />
-                            <datalist id='destinations'>
-                                { allDestinations }
-                            </datalist>
+                        >
+                            <option value="" disabled="disabled">Select a destination!</option>
+                            { allDestinations }
+                        </select>
                     </div>
                     <div className="form-group">
                         <input type="text" 
