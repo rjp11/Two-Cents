@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import "./profileCards.css";
 
 const ProfileCard = props => (

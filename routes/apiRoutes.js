@@ -6,9 +6,8 @@ const db = require("../models/");
 
 // GET ALL DESTINATIONS FROM DATABASE TO POPULATE THE DESTINATION PULLDOWN MENU ON CREATE DESTINATION PAGE
 router.get("/destinations", (req, res) => 
-    db.Destination.findAll({})
-        .then(dbDestination =>
-            res.json(dbDestination))
+    db.Destination.findAll({}).then(dbDestination =>
+        res.json(dbDestination))
 );
 
 // GET ALL DESTINATIONS YOU'VE CREATED A PERSONAL PAGE FOR ON CREATE POI FORM
