@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import "./profileCards.css";
 
 const ProfileCard = props => (
   
@@ -8,9 +9,7 @@ const ProfileCard = props => (
                         { props.destination }
                     </div>
                     <div className="panel-body">
-                        <h4>Insert Image Here </h4>
-                        <h6>with link to page </h6>
-                        
+                        <img className="card" alt="Sicilian Newsstand" src="https://farm5.staticflickr.com/4477/37543488160_a487b3f012_b.jpg" />                        
                     </div>
                 </div>
             </div>
