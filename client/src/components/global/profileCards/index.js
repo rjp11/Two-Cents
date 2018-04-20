@@ -1,18 +1,19 @@
 import React, {Component} from 'react';
 
-class ProfileCards extends Component {
-    render() {
-        return(
+const ProfileCard = props => (
+  
             <div className="col-lg-4">
                 <div className="panel panel-default">
-                    <div className="panel-heading"></div>
+                    <div className="panel-heading">
+                        { props.destination }
+                    </div>
                     <div className="panel-body">
-                        <img/>   
+                        <h4>Insert Image Here </h4>
+                        <h6>with link to page </h6>
+                        
                     </div>
                 </div>
             </div>
-        )
-    }
-}
+)
 
-export default ProfileCards;
+export default ProfileCard;
