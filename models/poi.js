@@ -22,7 +22,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true
         },
         poi_description: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(2000),
             allowNull: false
         },
         image_url: {
