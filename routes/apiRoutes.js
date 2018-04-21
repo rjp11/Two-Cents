@@ -19,15 +19,15 @@ router.get("/destinations/:userID", (req, res) =>
 );
 
 // GET ALL POIs FOR A GIVEN DESTINATION
-// router.get("/poi/:userID/:destination", (req, res) => 
-//     db.POI.findAll({
-//         where: {
-//             user_id : req.params.userID,
-//             destination: req.params.destination
-//         }
-//     }).then(data =>
-//         res.json(data))
-// );
+router.get("/poi/:user/:destination", (req, res) => 
+    db.POI.findAll({
+        where: {
+            user_id : req.params.user,
+            destination: req.params.destination
+        }
+    }).then(data =>
+        res.json(data))
+);
 
 router.post("/userDestinations", (req, res) =>
     db.UserDestinations.create({
