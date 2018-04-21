@@ -14,6 +14,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         poi_name: {
             type: DataTypes.STRING,
+            unique: true,
             allowNull: false
         },
         poi_address: {

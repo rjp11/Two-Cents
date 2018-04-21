@@ -6,7 +6,7 @@ import axios from 'axios';
 class ProfilePage extends Component {
     state = {
         user_id: 1,
-        user_destinations : []
+        user_destinations : [],
     }
     
     componentDidMount = () => {
@@ -26,6 +26,7 @@ class ProfilePage extends Component {
                 <ProfileWrapper>
                     {this.state.user_destinations.map(destination => (
                         <ProfileCard
+                            key={destination.id}
                             id={destination.id}
                             destination={destination.destination}
                         />

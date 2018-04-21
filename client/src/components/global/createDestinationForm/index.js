@@ -6,6 +6,7 @@ class CreateDestinationForm extends Component {
     state = {
         user_id: "",
         destination: "",
+        concat: "",
         notes: "",
         allDests: []
     }
@@ -23,6 +24,7 @@ class CreateDestinationForm extends Component {
         const data = {
             user_id: this.state.user_id,
             destination: this.state.destination,
+            concat: this.state.concat,
             notes: this.state.notes
         };
 

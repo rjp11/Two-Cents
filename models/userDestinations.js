@@ -8,6 +8,11 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
+        concat: {
+            type: DataTypes.STRING,
+            unique: true,
+            allowNull: true
+        },
         notes: {
             type: DataTypes.STRING,
             allowNull: true

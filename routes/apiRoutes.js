@@ -53,7 +53,8 @@ router.post("/poi", (req, res) =>
 
 router.post("/add/destination", (req, res) =>
     db.Destination.create({
-        "name": req.body.name
+        "name": req.body.name,
+        "image_url": req.body.image_url
     }).then(dbDestinations =>
         res.json(dbDestinations))
 );
