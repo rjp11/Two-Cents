@@ -11,7 +11,7 @@ const ProfileCard = props => (
                     </div>
                     <div className="panel-body">
                         <Link to={`/destination/${props.id}`}>
-                            <img className="card" alt="Sicilian Newsstand" src="https://farm5.staticflickr.com/4477/37543488160_a487b3f012_b.jpg" />   
+                            <img className="card" alt="Sicilian Newsstand" src={ props.img} />   
                         </Link>                
                     </div>
                 </div>

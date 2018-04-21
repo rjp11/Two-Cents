@@ -16,6 +16,13 @@ module.exports = function (sequelize, DataTypes) {
         notes: {
             type: DataTypes.STRING(2000),
             allowNull: true
+        },
+        image_url: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                isUrl: true
+            }
         }
     });
 

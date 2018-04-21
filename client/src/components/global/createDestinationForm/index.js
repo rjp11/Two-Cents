@@ -8,6 +8,7 @@ class CreateDestinationForm extends Component {
         destination: "",
         concat: "",
         notes: "",
+        image_url : "",
         allDests: []
     }
 
@@ -25,7 +26,8 @@ class CreateDestinationForm extends Component {
             user_id: this.state.user_id,
             destination: this.state.destination,
             concat: this.state.concat,
-            notes: this.state.notes
+            notes: this.state.notes,
+            image_url: this.state.image_url
         };
 
         axios.post('/api/userDestinations/', data).then(data => console.log("Success!"));
@@ -73,6 +75,15 @@ class CreateDestinationForm extends Component {
                             placeholder="Destination Notes"
                             name="notes"
                             value={this.state.notes}
+                            onChange={this.handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input type="text" 
+                            className="form-control" 
+                            placeholder="Cover Photo URL"
+                            name="image_url"
+                            value={this.state.image_url}
                             onChange={this.handleInputChange}
                         />
                     </div>

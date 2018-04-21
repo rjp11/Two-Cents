@@ -28,6 +28,7 @@ class ProfilePage extends Component {
                             key={destination.id}
                             id={destination.id}
                             destination={destination.destination}
+                            img = {destination.image_url}
                         />
                     ))}
                 </ProfileWrapper>
