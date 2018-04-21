@@ -26,15 +26,20 @@ class DestinationPage extends Component {
             <div>
                 <h1>Destination page!</h1>
                 <DestinationWrapper>
-                    {this.state.pois.map(poi => (
-                        <POIPanel
-                            key={poi.id}
-                            id={poi.id}
-                            poi={poi.poi_name}
-                            type={poi.poi_type}
-                            description ={poi.poi_description}
-                        />
-                    ))}
+                    <div className='col-lg-6'>
+                        {this.state.pois.map(poi => (
+                            <POIPanel
+                                key={poi.id}
+                                id={poi.id}
+                                poi={poi.poi_name}
+                                type={poi.poi_type}
+                                description ={poi.poi_description}
+                            />
+                        ))}
+                    </div>
+                    <div className='col-lg-6'>
+                        <MapPanel />
+                    </div>
                 </DestinationWrapper>
             </div>
         )

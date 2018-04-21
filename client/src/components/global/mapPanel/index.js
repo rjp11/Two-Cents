@@ -7,8 +7,8 @@ class MapPanel extends Component {
     
     render(){
         return(
-            <div>
-
+            <div className='col-lg-6'>
+                <h1>Insert Map Here</h1>
             </div>
         )
     }

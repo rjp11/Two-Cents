@@ -2,16 +2,14 @@ import React from 'react';
  
 const POIPanel = props => (
    
-            <div className='col-lg-6'>
                 <div className="panel panel-default" data-id={ props.id }>
                     <div className="panel-heading">
-                        {props.type}: { props.poi }
+                        <h3>{props.type}: { props.poi }</h3>
                     </div>
                     <div className="panel-body">
-                        <h4>{ props.description } </h4>          
+                        <p>{ props.description } </p>          
                     </div>
                 </div>
-            </div>
 
 )
 
