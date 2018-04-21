@@ -12,7 +12,6 @@ class ProfilePage extends Component {
     componentDidMount = () => {
         let userID = this.state.user_id;
         axios.get(`/api/destinations/${userID}`).then((res) => {
-            console.log(res.data);
             this.setState({
                 user_destinations: res.data
             })
