@@ -23,7 +23,7 @@ class App extends Component {
           <Route exact path='/userSearch' component={UserSearch} />
           <Route exact path='/create/destination' component={CreatePage} />
           <Route exact path='/create/poi' component={CreatePOI} />
-          <Route path='/destination/' component={DestinationPage} />
+          <Route path='/destination/:id' component={DestinationPage} />
           <Route exact path='/signup' component={SignUpPage} />
           <Route exact path='/profile' component={ProfilePage} />
         </div>
