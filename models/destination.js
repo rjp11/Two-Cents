@@ -8,13 +8,6 @@ module.exports = function (sequelize, DataTypes) {
         address: {
             type: DataTypes.STRING,
             allowNull: true
-        },
-        image_url: {
-            type: DataTypes.STRING,
-            allowNull: true,
-            validate: {
-                isUrl: true
-            }
         }
     });
 

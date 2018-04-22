@@ -33,7 +33,8 @@ router.post("/userDestinations", (req, res) =>
     db.UserDestinations.create({
         "user_id": req.body.user_id,
         "destination": req.body.destination,
-        "notes": req.body.notes
+        "notes": req.body.notes,
+        "image_url": req.body.image_url
     }).then(dbUserDestinations =>
         res.json(dbUserDestinations))
 );
