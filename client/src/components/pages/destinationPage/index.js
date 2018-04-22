@@ -13,7 +13,7 @@ class DestinationPage extends Component {
     
     componentDidMount = () => {
         let userID = this.state.user_id;
-        let destination = 'Chicago';
+        let destination = this.state.pois.destination;
 
         axios.get(`/api/poi/${userID}/${destination}`).then((res) => {
             this.setState({

@@ -10,7 +10,7 @@ router.get("/destinations", (req, res) =>
         res.json(dbDestination))
 );
 
-// GET ALL DESTINATIONS YOU'VE CREATED A PERSONAL PAGE FOR ON CREATE POI FORM
+// GET ALL DESTINATIONS THE USER CREATED A PERSONAL PAGE FOR ON CREATE POI FORM
 router.get("/destinations/:userID", (req, res) => 
     db.UserDestinations.findAll({ 
         where: {user_id : req.params.userID}
@@ -18,7 +18,7 @@ router.get("/destinations/:userID", (req, res) =>
         res.json(data))
 );
 
-// GET ALL POIs FOR A GIVEN DESTINATION
+// GET ALL THE USER'S POIs FOR A GIVEN DESTINATION
 router.get("/poi/:user/:destination", (req, res) => 
     db.POI.findAll({
         where: {
@@ -29,6 +29,8 @@ router.get("/poi/:user/:destination", (req, res) =>
         res.json(data))
 );
 
+// THIS POST CREATES A PERSONAL DESTINATION PAGE FOR THE USER
+// THE USER MUST CREATE A PAGE BEFORE THEY CAN POST A POI TO IT
 router.post("/userDestinations", (req, res) =>
     db.UserDestinations.create({
         "user_id": req.body.user_id,
@@ -52,10 +54,11 @@ router.post("/poi", (req, res) =>
         res.json(dbPOI))
 );
 
+// ROUTE FOR ADMIN TO ADD DESTINATIONS USERS CAN POST ABOUT
 router.post("/add/destination", (req, res) =>
     db.Destination.create({
-        "name": req.body.name,
-        "image_url": req.body.image_url
+        "name": req.body.name
+        // "address": to center map?
     }).then(dbDestinations =>
         res.json(dbDestinations))
 );

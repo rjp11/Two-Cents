@@ -10,8 +10,8 @@ const ProfileCard = props => (
                         { props.destination }
                     </div>
                     <div className="panel-body">
-                        <Link to={`/destination/${props.id}`}>
-                            <img className="card" alt="Sicilian Newsstand" src={ props.img} />   
+                        <Link to={`/destination/${props.id}/${props.destination}`}>
+                            <img className="card" alt={ props.id } src={ props.img } />   
                         </Link>                
                     </div>
                 </div>
