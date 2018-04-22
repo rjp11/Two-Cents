@@ -4,16 +4,17 @@ import axios from 'axios';
 
 class Nav extends Component {
     state = {
-        user_id: 1
+        user_id: 1,
+        user_first_name: ""
     }
 
     componentDidMount = () => {
-        let userID = this.state.user_id;
+        
         axios.get('api/user_data').then((res) => {
-            console.log(res);
             
             this.setState({
-                user_id: res.data.id
+                user_id: res.data.id,
+                user_first_name: res.data.first_name
             })
         })
     }
@@ -28,7 +29,7 @@ class Nav extends Component {
                     <li><Link to='/create/destination'>Create Page</Link></li>
                     {/* <li><Link to='/destination/:id'>Destination Page</Link></li> */}
                     <li><Link to='/profile'>Profile</Link></li>
-                    <li> { this.state.user_id } </li>
+                    <li> { this.state.user_first_name } </li>
 
                 </ul>
             </div>
