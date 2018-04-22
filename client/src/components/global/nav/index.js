@@ -18,6 +18,12 @@ class Nav extends Component {
             })
         })
     }
+
+    logout = () => {
+        axios.get('/api/logout', function(req, res){
+            console.log('LOGGED OUT!');
+        })
+    }
     
     render() {
         return(
@@ -30,6 +36,7 @@ class Nav extends Component {
                     {/* <li><Link to='/destination/:id'>Destination Page</Link></li> */}
                     <li><Link to='/profile'>Profile</Link></li>
                     <li> { this.state.user_first_name } </li>
+                    <li onClick={ this.logout() }><Link to='/'>Log Out</Link></li>
 
                 </ul>
             </div>
