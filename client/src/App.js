@@ -13,6 +13,10 @@ import SignUpPage from './components/pages/signUpPage';
 import ProfilePage from './components/pages/profile';
 
 class App extends Component {
+  state = {
+    user_id: 1
+  }
+
   render() {
     return (
       <Router>
@@ -25,7 +29,9 @@ class App extends Component {
           <Route exact path='/create/poi' component={CreatePOI} />
           <Route path='/destination/:id' component={DestinationPage} />
           <Route exact path='/signup' component={SignUpPage} />
-          <Route exact path='/profile' component={ProfilePage} />
+          <Route exact path='/profile' 
+                render={(props) => <ProfilePage {...props} user_id={this.state.user_id} /> }
+          />
         </div>
       </Router>
     );

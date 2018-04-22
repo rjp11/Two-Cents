@@ -5,12 +5,11 @@ import axios from 'axios';
 
 class ProfilePage extends Component {
     state = {
-        user_id: 1,
         user_destinations : [],
     }
     
     componentDidMount = () => {
-        let userID = this.state.user_id;
+        let userID = this.props.user_id;
         axios.get(`/api/destinations/${userID}`).then((res) => {
             this.setState({
                 user_destinations: res.data
@@ -21,7 +20,7 @@ class ProfilePage extends Component {
     render() {
         return(
             <div>
-                <h1>User #1's Pages</h1>
+                <h1>User #{this.props.user_id}'s Pages</h1>
                 <ProfileWrapper>
                     {this.state.user_destinations.map(destination => (
                         <ProfileCard
