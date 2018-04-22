@@ -12,20 +12,21 @@ const session = require("express-session");
 const passport = require("./config/passport");
 
 // Serve up static assets
-app.use(express.static("client/build"));
+app.use(express.static("client/public"));
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
-// Use apiRoutes
-app.use("/api", apiRoutes);
-// Use HTML Routes
-//app.use(htmlRoutes);
 
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Use apiRoutes
+app.use("/api", apiRoutes);
+// Use HTML Routes
+app.use(htmlRoutes);
 
 // Send every request to the React app
 // Define any API routes before this runs

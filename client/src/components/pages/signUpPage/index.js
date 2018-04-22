@@ -6,7 +6,6 @@ class SignUpPage extends Component {
         return(
             <div>
                 <SignUpForm/>
-                <script type="text/javascript" src="../../../../public/js/signup.js"></script>
             </div>
         )
     }
