@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-import axios from 'axios';
 
 
 class CreateDestinationForm extends Component {
 
     componentDidMount = () => {
-        this.props.getAllDestinations
+        this.props.getAllDestinations()
     }
 
     render() {
