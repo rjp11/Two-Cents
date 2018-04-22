@@ -10,7 +10,12 @@ class CreatePage extends Component {
                 <CreatePageNav />
                 <CreateDestinationForm user_id={this.props.user_id}
                     getAllDestinations={this.props.getAllDestinations}
-                    allDests={this.props.allDests} />
+                    allDests={this.props.allDests}
+                    destination={this.props.destination}
+                    dest_notes={this.props.dest_notes}
+                    dest_image_url={this.props.dest_image_url} 
+                    handleInputChange={this.props.handleInputChange} 
+                    addDestinationHandler={this.props.addDestinationHandler} />
                 
             </div>
         )

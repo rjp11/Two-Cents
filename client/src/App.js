@@ -18,9 +18,14 @@ class App extends Component {
     user_id: 1,
     user_first_name: "Ryan",
     user_email: "",
-    allDests: []
+    allDests: [],
+    destination: "",
+    dest_concat: "",
+    dest_notes: "",
+    dest_image_url: ""
   }
 
+  // Set State with Logged-in User's data
   getUserData = () => {
     axios.get('api/user_data').then((res) => { 
       this.setState({
@@ -30,14 +35,37 @@ class App extends Component {
       })
     })
   }
+
+  // Set state based on form input change
+  handleInputChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+
+    this.setState({
+        [name]: value
+    });
+  }
   
+  // Retreive all destination to pass into the drop down on the create destination form
   getAllDestinations = () => {
     axios.get('/api/destinations').then((res) => {
-      console.log(res.data);
       this.setState({
           allDests: res.data
       })
     });
+  }
+
+  // Set state, create User Destination Entry in DB on create destination submit 
+  addDestinationHandler = () => {
+    const data = {
+        user_id: this.state.user_id,
+        destination: this.state.destination,
+        concat: this.state.concat,
+        notes: this.state.notes,
+        image_url: this.state.image_url
+    };
+
+    axios.post('/api/userDestinations/', data).then(data => console.log("Success!"));
   }
 
   logout = () => {
@@ -61,7 +89,12 @@ class App extends Component {
                 render={ (props) => <CreatePage {...props} 
                 user_id={this.state.user_id}
                 getAllDestinations={this.getAllDestinations}
-                allDests={this.state.allDests} /> } 
+                allDests={this.state.allDests}
+                destination={this.state.destination}
+                dest_notes={this.state.dest_notes}
+                dest_image_url={this.state.dest_image_url} 
+                handleInputChange={this.handleInputChange} 
+                addDestinationHandler={this.addDestinationHandler} /> } 
           />
           <Route exact path='/create/poi' component={CreatePOI} />
           <Route path='/destination/:id' component={DestinationPage} />
