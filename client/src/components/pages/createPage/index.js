@@ -8,7 +8,9 @@ class CreatePage extends Component {
             <div>
                 <h1>Create a page!</h1>
                 <CreatePageNav />
-                <CreateDestinationForm />
+                <CreateDestinationForm user_id={this.props.user_id}
+                    getAllDestinations={this.props.getAllDestinations}
+                    allDests={this.props.allDests} />
                 
             </div>
         )

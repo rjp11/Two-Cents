@@ -1,29 +1,12 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import axios from 'axios';
 
 class Nav extends Component {
-    state = {
-        user_id: 1,
-        user_first_name: ""
-    }
 
     componentDidMount = () => {
-        
-        axios.get('api/user_data').then((res) => {
-            
-            this.setState({
-                user_id: res.data.id,
-                user_first_name: res.data.first_name
-            })
-        })
+        this.props.getUserData
     }
 
-    logout = () => {
-        axios.get('/api/logout', function(req, res){
-            console.log('LOGGED OUT!');
-        })
-    }
     
     render() {
         return(
@@ -35,9 +18,8 @@ class Nav extends Component {
                     <li><Link to='/create/destination'>Create Page</Link></li>
                     {/* <li><Link to='/destination/:id'>Destination Page</Link></li> */}
                     <li><Link to='/profile'>Profile</Link></li>
-                    <li> { this.state.user_first_name } </li>
-                    <li onClick={ this.logout() }><Link to='/'>Log Out</Link></li>
-
+                    <li onClick={ this.props.logout }><Link to='/'>Log Out</Link></li>
+                    <li> Hello, { this.props.user_first_name } </li>
                 </ul>
             </div>
         )

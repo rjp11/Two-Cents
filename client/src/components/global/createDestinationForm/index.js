@@ -4,12 +4,10 @@ import axios from 'axios';
 
 class CreateDestinationForm extends Component {
     state = {
-        user_id: "",
         destination: "",
         concat: "",
         notes: "",
         image_url : "",
-        allDests: []
     }
 
     handleInputChange = (event) => {
@@ -23,7 +21,7 @@ class CreateDestinationForm extends Component {
 
     addDestinationHandler = () => {
         const data = {
-            user_id: this.state.user_id,
+            user_id: this.props.user_id,
             destination: this.state.destination,
             concat: this.state.concat,
             notes: this.state.notes,
@@ -34,16 +32,11 @@ class CreateDestinationForm extends Component {
     }
 
     componentDidMount = () => {
-        axios.get('/api/destinations').then((res) => {
-            console.log(res.data);
-            this.setState({
-                allDests: res.data
-            })
-        });
+        this.props.getAllDestinations
     }
 
     render() {
-        const allDestinations = this.state.allDests.map(destination => {
+        const allDestinations = this.props.allDests.map(destination => {
             return ( <option key={destination.id} value={destination.name}>{destination.name}</option>
             )
         });
@@ -53,9 +46,9 @@ class CreateDestinationForm extends Component {
                     <div className="form-group">
                         <input type="text" 
                             className="form-control" 
-                            placeholder="User ID"
+                            placeholder={this.props.user_id}
                             name="user_id"
-                            value={this.state.user_id}
+                            value={this.props.user_id}
                             onChange={this.handleInputChange}
                         />
                     </div>
