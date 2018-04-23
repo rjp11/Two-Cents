@@ -123,7 +123,6 @@ class App extends Component {
         <div>
           <Nav user_id={this.state.user_id}
                 user_first_name={this.state.user_first_name}
-                getUserData={this.getUserData}
                 logout = {this.logout}/>
           <Route exact path='/' component={Home} />
           <Route exact path='/login' component={LogIn} />

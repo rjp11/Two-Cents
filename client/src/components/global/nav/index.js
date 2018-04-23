@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 class Nav extends Component {
 
     componentDidMount = () => {
-        this.props.getUserData()
+        // this.props.getUserData()
     }
 
     

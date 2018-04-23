@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import ProfileWrapper from '../../global/profileWrapper';
 import ProfileCard from '../../global/profileCards';
 
 class ProfilePage extends Component {
@@ -12,7 +11,7 @@ class ProfilePage extends Component {
         return(
             <div>
                 <h1>User #{this.props.user_id}'s Pages</h1>
-                <ProfileWrapper>
+                <div className='row'>
                     {this.props.user_destinations.map(destination => (
                         <ProfileCard
                             key={destination.id}
@@ -21,7 +20,7 @@ class ProfilePage extends Component {
                             img = {destination.image_url}
                         />
                     ))}
-                </ProfileWrapper>
+                </div>
             </div>
         )
     }

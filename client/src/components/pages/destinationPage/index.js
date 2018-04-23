@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import DestinationWrapper from '../../global/profileWrapper';
 import POIPanel from '../../global/poiPanel';
-import MapWrapper from '../../global/mapWrapper';
 import Map from '../../global/map';
 
 
@@ -16,7 +14,7 @@ class DestinationPage extends Component {
         return(
             <div>
                 <h1>Destination page!</h1>
-                <DestinationWrapper>
+                <div className='row'>
                     <div className='col-lg-6' data-spy="scroll">
                         {this.props.pois.map(poi => (
                             <POIPanel
@@ -30,11 +28,9 @@ class DestinationPage extends Component {
                         ))}
                     </div>
                     <div className='col-lg-6'>
-                        <MapWrapper>
-                            <Map/>
-                        </MapWrapper>
+                        <Map/>
                     </div>
-                </DestinationWrapper>
+                </div>
             </div>
         )
     }
