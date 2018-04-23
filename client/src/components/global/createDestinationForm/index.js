@@ -16,15 +16,6 @@ class CreateDestinationForm extends Component {
         return (
                 <form>
                     <div className="form-group">
-                        <input type="text" 
-                            className="form-control" 
-                            placeholder={this.props.user_id}
-                            name="user_id"
-                            value={this.props.user_id}
-                            onChange={this.props.handleInputChange}
-                        />
-                    </div>
-                    <div className="form-group">
                         <select className="form-control" 
                             name="destination"
                             value={this.props.destination}

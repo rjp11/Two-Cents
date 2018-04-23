@@ -8,7 +8,10 @@ class CreatePOI extends Component {
             <div>
                 <h1>Create a page!</h1>
                 <CreatePageNav />
-                <CreatePOIForm />
+                <CreatePOIForm 
+                    getUserDestinations={this.props.getUserDestinations}
+                    addPOIHandler = {this.props.addPOIHandler} 
+                />
                 
             </div>
         )
