@@ -24,7 +24,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING(2000),
             allowNull: false
         },
-        image_url: {
+        poi_image_url: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
