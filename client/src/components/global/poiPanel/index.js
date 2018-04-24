@@ -1,18 +1,22 @@
-import React from 'react';
+import React, {Component} from 'react';
 import "./poiPanel.css";
  
-const POIPanel = props => (
-   
-    <div className="panel panel-default" data-id={ props.id }>
-        <div className="panel-heading">
-            <h3>{props.type}: { props.poi }</h3>
-        </div>
-        <div className="panel-body">
-            <img alt={props.id} src={props.url} className='POI-PICTURE'/>
-                <p>{ props.description } </p>          
-        </div>
-    </div>
+class POIPanel extends Component {
+    render(){
+        return(
+            <div className="panel panel-default" data-id={ this.props.id }>
+                <div className="panel-heading">
+                    <h3>{ this.props.type }: { this.props.poi }</h3>
+                </div>
+                <div className="panel-body">
+                    <img alt={this.props.id} src={this.props.url} className='POI-PICTURE'/>
+                        <p>{ this.props.description } </p>          
+                </div>
+            </div>
+        )
+    }
+    
 
-)
+}
 
 export default POIPanel;

@@ -22,7 +22,7 @@ class DestinationPage extends Component {
                                 id={poi.id}
                                 poi={poi.poi_name}
                                 type={poi.poi_type}
-                                url = {poi.image_url}
+                                url = {poi.poi_image_url}
                                 description ={poi.poi_description}
                             />
                         ))}

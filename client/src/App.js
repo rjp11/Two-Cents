@@ -93,7 +93,7 @@ class App extends Component {
   // Retrieve all POIs user has saved for that destination
   getUserPOIs = () => {
     let userID = this.state.user_id;
-    let destination = this.state.pois.destination;
+    let destination = this.state.destination;
 
     axios.get(`/api/poi/${userID}/${destination}`).then((res) => {
       this.setState({
