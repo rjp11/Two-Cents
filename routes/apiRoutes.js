@@ -49,7 +49,7 @@ router.post("/poi", (req, res) =>
         "poi_name": req.body.poi_name,
         "poi_address": req.body.poi_address,
         "poi_description": req.body.poi_description,
-        "image_url": req.body.poi_image_url
+        "poi_image_url": req.body.poi_image_url
     }).then(dbPOI =>
         res.json(dbPOI))
 );
