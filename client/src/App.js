@@ -65,11 +65,11 @@ class App extends Component {
   // Set state, create User Destination Entry in DB on create destination submit 
   addDestinationHandler = () => {
     const data = {
-        user_id: this.state.user_id,
-        destination: this.state.destination,
-        concat: this.state.concat,
-        notes: this.state.notes,
-        image_url: this.state.dest_image_url
+      user_id: this.state.user_id,
+      destination: this.state.destination,
+      concat: this.state.concat,
+      notes: this.state.notes,
+      image_url: this.state.dest_image_url
     };
 
     axios.post('/api/userDestinations/', data).then(data => console.log("Success!"));
@@ -84,10 +84,10 @@ class App extends Component {
       poi_name: this.state.poi_name,
       poi_address: this.state.poi_address,
       poi_description: this.state.poi_description,
-      image_url: this.state.poi_image_url
-  };
+      poi_image_url: this.state.poi_image_url
+    };
 
-  axios.post('/api/poi/', data).then(data => console.log("Success!"));
+    axios.post('/api/poi/', data).then(data => console.log("Success!"));
   }
 
   // Retrieve all POIs user has saved for that destination
@@ -122,47 +122,48 @@ class App extends Component {
       <Router>
         <div>
           <Nav user_id={this.state.user_id}
-                user_first_name={this.state.user_first_name}
-                logout = {this.logout}/>
+                user_first_name={ this.state.user_first_name }
+                logout = { this.logout }/>
           <Route exact path='/' component={Home} />
           <Route exact path='/login' component={LogIn} />
           <Route exact path='/userSearch' component={UserSearch} />
           <Route exact path='/create/destination' 
                 render={ (props) => <CreatePage {...props} 
-                user_id={this.state.user_id}
-                getAllDestinations={this.getAllDestinations}
-                allDests={this.state.allDests}
-                destination={this.state.destination}
-                dest_notes={this.state.dest_notes}
-                dest_image_url={this.state.dest_image_url} 
-                handleInputChange={this.handleInputChange} 
-                addDestinationHandler={this.addDestinationHandler} /> } 
+                user_id={ this.state.user_id }
+                getAllDestinations={ this.getAllDestinations }
+                allDests={ this.state.allDests }
+                destination={ this.state.destination }
+                dest_notes={ this.state.dest_notes }
+                dest_image_url={ this.state.dest_image_url } 
+                handleInputChange={ this.handleInputChange } 
+                addDestinationHandler={ this.addDestinationHandler } /> } 
           />
           <Route exact path='/create/poi' 
                 render={ (props) => <CreatePOI {...props}
-                user_id={this.state.user_id}
-                destination= {this.state.destination}
-                poi_type= {this.state.poi_type}
+                user_id={ this.state.user_id }
+                destination= { this.state.destination }
+                poi_type= { this.state.poi_type }
                 poi_name = { this.state.poi_name }
-                poi_address = { this.state.poi_address}
-                poi_description = { this.state.poi_description}
-                image_url = { this.state.image_url}
-                getUserDestinations = {this.getUserDestinations} 
-                handleInputChange={this.handleInputChange} 
-                addPOIHandler = {this.addPOIHandler} /> }
+                poi_address = { this.state.poi_address }
+                poi_description = { this.state.poi_description }
+                poi_image_url = { this.state.image_url }
+                getUserDestinations = {this.getUserDestinations } 
+                handleInputChange= { this.handleInputChange } 
+                addPOIHandler = { this.addPOIHandler }
+                user_destinations = { this.state.user_destinations } /> }
                 />
           <Route path='/destination/:id'
                 render={ (props) => <DestinationPage {...props}
-                user_id={this.state.user_id}
+                user_id={ this.state.user_id }
                 pois = { this.state.pois } 
-                getUserPOIs={this.getUserPOIs} /> }
+                getUserPOIs={ this.getUserPOIs} /> }
               />
           <Route exact path='/signup' component={SignUpPage} />
           <Route exact path='/profile' 
                 render={ (props) => <ProfilePage {...props} 
-                user_id={this.state.user_id}
-                user_destinations={this.state.user_destinations}
-                getUserDestinations={this.getUserDestinations} /> }
+                user_id={ this.state.user_id }
+                user_destinations={ this.state.user_destinations }
+                getUserDestinations={ this.getUserDestinations } /> }
           />
         </div>
       </Router>

@@ -28,7 +28,7 @@ class CreatePOIForm extends Component {
                         <select className="form-control" 
                         placeholder="Location Type"
                         name="poi_type"
-                        value={this.state.poi_type}
+                        value={this.props.poi_type}
                         onChange={this.props.handleInputChange}
                         >
                             <option value="" disabled="disabled">Select type of location</option>
@@ -44,7 +44,7 @@ class CreatePOIForm extends Component {
                             className="form-control" 
                             placeholder="Location Name"
                             name="poi_name"
-                            value={this.state.poi_name}
+                            value={this.props.poi_name}
                             onChange={this.props.handleInputChange}
                         />
                     </div>
@@ -53,17 +53,17 @@ class CreatePOIForm extends Component {
                             className="form-control" 
                             placeholder="Location Description"
                             name="poi_description"
-                            value={this.state.poi_description}
+                            value={this.props.poi_description}
                             onChange={this.props.handleInputChange}
                         />
                     </div>
                     <div className="form-group">
                         <input type="text" 
-                        className="form-control" 
-                        placeholder="Image Link"
-                        name="image_url"
-                        value={this.state.image_url}
-                        onChange={this.props.handleInputChange}
+                            className="form-control" 
+                            placeholder="Image Link"
+                            name="poi_image_url"
+                            value={this.props.poi_image_url}
+                            onChange={this.props.handleInputChange}
                         />
                     </div>
 

@@ -9,8 +9,17 @@ class CreatePOI extends Component {
                 <h1>Create a page!</h1>
                 <CreatePageNav />
                 <CreatePOIForm 
-                    getUserDestinations={this.props.getUserDestinations}
-                    addPOIHandler = {this.props.addPOIHandler} 
+                    user_id={ this.props.user_id }
+                    destination= { this.props.destination }
+                    poi_type= { this.props.poi_type }
+                    poi_name = { this.props.poi_name }
+                    poi_address = { this.props.poi_address }
+                    poi_description = { this.props.poi_description }
+                    poi_image_url = { this.props.poi_image_url }
+                    getUserDestinations={ this.props.getUserDestinations }
+                    handleInputChage= { this.props.handleInputChange }
+                    addPOIHandler = { this.props.addPOIHandler } 
+                    user_destinations = { this.props.user_destinations }
                 />
                 
             </div>
