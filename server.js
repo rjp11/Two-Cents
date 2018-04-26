@@ -26,7 +26,7 @@ app.use(passport.session());
 // Use apiRoutes
 app.use("/api", apiRoutes);
 // Use HTML Routes
-app.use(htmlRoutes);
+// app.use(htmlRoutes);
 
 // Send every request to the React app
 // Define any API routes before this runs

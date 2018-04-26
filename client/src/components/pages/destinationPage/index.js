@@ -1,13 +1,31 @@
 import React, {Component} from 'react';
 import POIPanel from '../../global/poiPanel';
 import Map from '../../global/map';
+import axios from 'axios';
 
 
 class DestinationPage extends Component {
+    state = {
+        pois: []
+    }
+    
 
     
-    componentDidMount = () => {
-        this.props.getUserPOIs()
+    componentDidMount (){
+        // Retrieve all POIs user has saved for that destination
+        
+            let userID = this.props.user_id;
+            
+            let destination = this.props.destination;
+          
+
+            axios.get(`/api/poi/${userID}/${destination}`).then((res) => {
+                
+                this.setState({
+                    pois: res.data
+                })
+            });
+            
     }
     
     render() {
@@ -16,7 +34,7 @@ class DestinationPage extends Component {
                 <h1>Destination page!</h1>
                 <div className='row'>
                     <div className='col-lg-6' data-spy="scroll">
-                        {this.props.pois.map(poi => (
+                        {this.state.pois.map(poi => (
                             <POIPanel
                                 key={poi.id}
                                 id={poi.id}

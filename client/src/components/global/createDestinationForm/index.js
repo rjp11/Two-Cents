@@ -1,12 +1,41 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 
 class CreateDestinationForm extends Component {
+    state = {
+        destination: "",
+        concat: "",
+        notes: "",
+        image_url: ""
+    }
 
     componentDidMount = () => {
         this.props.getAllDestinations()
     }
 
+    handleInputChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+    
+        this.setState({
+            [name]: value
+        });
+    }
+
+    // Set state, create User Destination Entry in DB on create destination submit 
+    addDestinationHandler = () => {
+        const data = {
+          user_id: this.props.user_id,
+          destination: this.state.destination,
+          concat: this.state.concat,
+          notes: this.state.notes,
+          image_url: this.state.image_url
+        };
+    
+        axios.post('/api/userDestinations/', data).then(data => console.log("Success!"));
+    }
+    
     render() {
         const allDestinations = this.props.allDests.map(destination => {
             return ( <option key={destination.id} value={destination.name}>{destination.name}</option>
@@ -18,8 +47,8 @@ class CreateDestinationForm extends Component {
                     <div className="form-group">
                         <select className="form-control" 
                             name="destination"
-                            value={this.props.destination}
-                            onChange={this.props.handleInputChange}
+                            value={this.state.destination}
+                            onChange={this.handleInputChange}
                         >
                             <option value="" disabled="disabled">Select a destination!</option>
                             { allDestinations }
@@ -30,8 +59,8 @@ class CreateDestinationForm extends Component {
                             className="form-control" 
                             placeholder="Destination Notes"
                             name="notes"
-                            value={this.props.notes}
-                            onChange={this.props.handleInputChange}
+                            value={this.state.notes}
+                            onChange={this.handleInputChange}
                         />
                     </div>
                     <div className="form-group">
@@ -39,13 +68,13 @@ class CreateDestinationForm extends Component {
                             className="form-control" 
                             placeholder="Cover Photo URL"
                             name="image_url"
-                            value={this.props.image_url}
-                            onChange={this.props.handleInputChange}
+                            value={this.state.image_url}
+                            onChange={this.handleInputChange}
                         />
                     </div>
                     <button type="submit" 
                         className="btn btn-default" 
-                        onClick={this.props.addDestinationHandler}
+                        onClick={this.addDestinationHandler}
                     >Submit</button>
                 </form>
         )

@@ -3,7 +3,7 @@ import ProfileCard from '../../global/profileCards';
 
 class ProfilePage extends Component {
     
-    componentDidMount = () => {
+    componentDidMount () {
         this.props.getUserDestinations()
     }
    
@@ -18,6 +18,11 @@ class ProfilePage extends Component {
                             id={destination.id}
                             destination={destination.destination}
                             img = {destination.image_url}
+                            setDestination = {this.props.setDestination}
+                            // onClick = {this.setDestination.bind({
+                            //     destination: destination.destination,
+                            //     context: this
+                            // })}
                         />
                     ))}
                 </div>
