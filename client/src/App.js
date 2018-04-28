@@ -73,7 +73,7 @@ class App extends Component {
 
   setDestination = (destination) => {
     this.setState({
-      destination: destination
+      destination: destination,
     })
   }
 
@@ -81,7 +81,7 @@ class App extends Component {
     axios.get('/api/logout', function(req, res){
         console.log('LOGGED OUT!');
     })
-}
+  }
 
   render() {
     return (
@@ -108,7 +108,7 @@ class App extends Component {
           <Route path='/destination/:id'
                 render={ (props) => <DestinationPage {...props}
                 user_id={ this.state.user_id }
-                pois = { this.state.pois } 
+                pois={ this.state.pois } 
                 getUserPOIs={ this.getUserPOIs}
                 destination={ this.state.destination } /> }
               />

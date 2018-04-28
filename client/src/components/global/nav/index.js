@@ -19,7 +19,6 @@ class Nav extends Component {
                     {/* <li><Link to='/destination/:id'>Destination Page</Link></li> */}
                     <li><Link to='/profile'>Profile</Link></li>
                     <li onClick={ this.props.logout }><Link to='/'>Log Out</Link></li>
-                    <li> Hello, { this.props.user_first_name } </li>
                 </ul>
             </div>
         )

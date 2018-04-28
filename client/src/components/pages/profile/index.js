@@ -19,10 +19,6 @@ class ProfilePage extends Component {
                             destination={destination.destination}
                             img = {destination.image_url}
                             setDestination = {this.props.setDestination}
-                            // onClick = {this.setDestination.bind({
-                            //     destination: destination.destination,
-                            //     context: this
-                            // })}
                         />
                     ))}
                 </div>

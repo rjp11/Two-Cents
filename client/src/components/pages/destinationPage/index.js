@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
 import POIPanel from '../../global/poiPanel';
-import Map from '../../global/map';
+import MyMapComponent from '../../global/map';
 import axios from 'axios';
 
 
 class DestinationPage extends Component {
     state = {
-        pois: []
+        pois: [],
+        coord_lat: 0,
+        coord_long: 0,
+        zoom: 0
     }
     
 
@@ -15,14 +18,20 @@ class DestinationPage extends Component {
         // Retrieve all POIs user has saved for that destination
         
             let userID = this.props.user_id;
-            
             let destination = this.props.destination;
-          
 
             axios.get(`/api/poi/${userID}/${destination}`).then((res) => {
                 
                 this.setState({
                     pois: res.data
+                })
+            });
+
+            axios.get(`/api/coords/${destination}`).then((res) => {
+                this.setState({
+                    coord_lat: res.data.coord_lat,
+                    coord_long: res.data.coord_long,
+                    zoom: res.data.zoom
                 })
             });
             
@@ -31,9 +40,11 @@ class DestinationPage extends Component {
     render() {
         return(
             <div>
-                <h1>Destination page!</h1>
+                <h1>{this.props.destination}</h1>
                 <div className='row'>
-                    <div className='col-lg-6' data-spy="scroll">
+                    <div className='col-lg-1'>
+                    </div>
+                    <div className='col-lg-5' data-spy="scroll">
                         {this.state.pois.map(poi => (
                             <POIPanel
                                 key={poi.id}
@@ -45,8 +56,15 @@ class DestinationPage extends Component {
                             />
                         ))}
                     </div>
-                    <div className='col-lg-6'>
-                        <Map/>
+                    <div className='col-lg-5'>
+                        <MyMapComponent
+                            coord_lat={ this.state.coord_lat }
+                            coord_long={this.state.coord_long }
+                            zoom={ this.state.zoom }
+
+                        />
+                    </div>
+                    <div className='col-lg-1'>
                     </div>
                 </div>
             </div>

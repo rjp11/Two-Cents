@@ -41,6 +41,7 @@ router.post("/userDestinations", (req, res) =>
         res.json(dbUserDestinations))
 );
 
+// THIS POST ROUTE SAVES A POI TO THE DB FOR A USER
 router.post("/poi", (req, res) =>
     db.POI.create({
         "user_id": req.body.user_id,
@@ -57,10 +58,23 @@ router.post("/poi", (req, res) =>
 // ROUTE FOR ADMIN TO ADD DESTINATIONS USERS CAN POST ABOUT
 router.post("/add/destination", (req, res) =>
     db.Destination.create({
-        "name": req.body.name
-        // "address": to center map?
+        "name": req.body.name,
+        "coord_lat": req.body.coord_lat,
+        "coord_long": req.body.coord_long,
+        "zoom": req.body.zoom
     }).then(dbDestinations =>
         res.json(dbDestinations))
+);
+
+// ROUTE TO GET THE DESTINATION'S COORDINATES & ZOOM TO PASS TO GOOGLE MAPS
+// GOOGLE MAP WILL BE CENTERED AND ZOOMED TO THAT LEVEL
+router.get("/coords/:destination", (req, res) =>
+    db.Destination.findAll({
+        where: {
+            destination: req.params.destination
+        }
+    }).then(dbDestinationCoords =>
+        res.json(dbUserDestinationCoords))
 );
 
 // Using the passport.authenticate middleware with our local strategy.
