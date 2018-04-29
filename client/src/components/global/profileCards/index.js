@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import "./profileCards.css";
-import {Link, Route} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 
 
 class ProfileCard extends Component {

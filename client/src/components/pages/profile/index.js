@@ -5,6 +5,7 @@ class ProfilePage extends Component {
     
     componentDidMount () {
         this.props.getUserDestinations()
+        console.log(process.env.GOOGLE_MAPS_JS)
     }
    
     render() {
