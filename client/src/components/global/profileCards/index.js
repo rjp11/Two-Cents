@@ -13,8 +13,8 @@ class ProfileCard extends Component {
       return (
         <div className="col-lg-4">
         <div className="panel panel-default" data-id={ this.props.id }>
-            <div className="panel-heading">
-                { this.props.destination }
+            <div className="panel-heading text-center">
+                <h1>{ this.props.destination.toUpperCase() }</h1>
             </div>
             <Route render = {({history}) => (
                 <div className="panel-body"
