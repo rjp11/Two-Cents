@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
-import CreatePageNav from '../../global/createPageNav';
+// import CreatePageNav from '../../global/createPageNav';
 import CreatePOIForm from '../../global/createPOIForm';
 
 class CreatePOI extends Component {
     render() {
         return(
             <div>
-                <h1>Create a page!</h1>
-                <CreatePageNav />
+                <h1>Add to a page!</h1>
                 <CreatePOIForm 
                     user_id={ this.props.user_id }
                     destination= { this.props.destination }
