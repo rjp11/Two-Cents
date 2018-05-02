@@ -4,6 +4,7 @@ import axios from 'axios';
 
 class SearchUser extends Component {
     state = {
+        users : [],
         search_user: ""
     }
 
@@ -19,8 +20,12 @@ class SearchUser extends Component {
     searchUser = () => {
         const search = this.state.search_user;
 
-        //axios.get(`/api/userSearch/${search}`)
-    }
+        axios.get(`/api/userSearch/${search}`).then((res) => {
+            this.setState({
+                users: res.data
+            })
+        });
+    };
     
     render() {
         return(

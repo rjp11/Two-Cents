@@ -12,28 +12,26 @@ class DestinationPage extends Component {
         zoom: 0
     }
     
-
-    
     componentDidMount (){
         // Retrieve all POIs user has saved for that destination
         
-            let userID = this.props.user_id;
-            let destination = this.props.destination;
+        let userID = this.props.user_id;
+        let destination = this.props.destination;
 
-            axios.get(`/api/poi/${userID}/${destination}`).then((res) => {
+        axios.get(`/api/poi/${userID}/${destination}`).then((res) => {
                 
-                this.setState({
-                    pois: res.data
-                })
-            });
+            this.setState({
+                pois: res.data
+            })
+        });
 
-            axios.get(`/api/coords/${destination}`).then((res) => {
-                this.setState({
-                    coord_lat: res.data.coord_lat,
-                    coord_long: res.data.coord_long,
-                    zoom: res.data.zoom
-                })
-            });
+        axios.get(`/api/coords/${destination}`).then((res) => {
+            this.setState({
+                coord_lat: res.data.coord_lat,
+                coord_long: res.data.coord_long,
+                zoom: res.data.zoom
+            })
+        });
             
     }
     
