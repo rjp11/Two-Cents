@@ -4,16 +4,30 @@ const passport = require("../config/passport");
 
 const db = require("../models/");
 
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+var env = process.env.NODE_ENV || 'development';
+const config = require(__dirname + '/../config/config.json')[env];
+
+if (config.use_env_variable) {
+    const sequelize = new Sequelize(process.env[config.use_env_variable], config);
+} else {
+    const sequelize = new Sequelize(config.database, config.username, config.password, config);
+}
+
 // GET ALL DESTINATIONS FROM DATABASE TO POPULATE THE DESTINATION PULLDOWN MENU ON CREATE DESTINATION PAGE
 router.get("/destinations", (req, res) => 
-    db.Destination.findAll({}).then(dbDestination =>
+    db.Destination.findAll({
+        order: [['name', 'ASC']]
+    }).then(dbDestination =>
         res.json(dbDestination))
 );
 
 // GET ALL DESTINATIONS THE USER CREATED A PERSONAL PAGE FOR ON CREATE POI FORM
 router.get("/destinations/:userID", (req, res) => 
     db.UserDestinations.findAll({ 
-        where: {user_id : req.params.userID}
+        where: {user_id : req.params.userID},
+        order: [['destination', 'ASC']]
      }).then(data =>
         res.json(data))
 );
@@ -66,7 +80,7 @@ router.post("/add/destination", (req, res) =>
         res.json(dbDestinations))
 );
 
-// ROUTE TO GET THE DESTINATION'S COORDINATES & ZOOM TO PASS TO GOOGLE MAPS
+// ROUTE TO GET THE DESTINATION'S COORDINATES & ZOOM LEVEL TO PASS TO GOOGLE MAPS
 // GOOGLE MAP WILL BE CENTERED AND ZOOMED TO THAT LEVEL
 router.get("/coords/:destination", (req, res) =>
     db.Destination.findAll({
@@ -76,6 +90,27 @@ router.get("/coords/:destination", (req, res) =>
     }).then(dbDestinationCoords =>
         res.json(dbUserDestinationCoords))
 );
+
+// ROUTE TO GET LIST OF USERS BASED ON SEARCH BY NAME
+router.get('/userSearch/:name', (req, res) => 
+    db.User.findAll({
+        where: {
+            first_name: req.params.name
+        }
+    }).then(dbSearchedUsers => 
+        res.json(dbSearchedUsers))
+);
+
+// ROUTE TO GET LIST OF USERS WITH A PAGE FOR A SEARCHED DESTINATION
+router.get('/destinationSearch/:destination', (req, res) => {
+    let query = `SELECT Users.first_name, Users.last_name FROM Users JOIN UserDestinations ON UserDestinations.user_id = Users_id WHERE UserDestinations.destination=${req.params.destination}`
+
+    sequelize.query(query, {
+        type: sequelize.QueryTypes.SELECT
+    }).then(data => {
+        res.json(data);
+    });
+});
 
 // Using the passport.authenticate middleware with our local strategy.
 // If the user has valid login credentials, send them to the members page.
@@ -131,3 +166,4 @@ router.get("/user_data", function (req, res) {
 
 
 module.exports = router;
+
