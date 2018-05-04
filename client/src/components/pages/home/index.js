@@ -15,7 +15,10 @@ class Home extends Component {
                 </div>
                 <div className='row text-center'>
                     <div className='col-lg-1'></div>
-                    <SearchUser />
+                    <SearchUser 
+                        searchUser={ this.props.searchUser }
+                        user_search={ this.props.user_search }
+                    />
                     <SearchDestination />
                 </div>
             </div>

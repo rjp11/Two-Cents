@@ -29,7 +29,9 @@ class App extends Component {
     poi_address: "",
     poi_description: "",
     poi_image_url: "",
-    user_destinations: []
+    user_destinations: [],
+    search_name: "",
+    user_search: []
   }
 
   // Set State with Logged-in User's data
@@ -77,6 +79,16 @@ class App extends Component {
     })
   }
 
+  searchUser = () => {
+    const search = this.state.search_name;
+
+    axios.get(`/api/userSearch/${search}`).then((res) => {
+        this.setState({
+            user_search: res.data
+        })
+    });
+  };
+
   logout = () => {
     axios.get('/api/logout', function(req, res){
         console.log('LOGGED OUT!');
@@ -90,9 +102,17 @@ class App extends Component {
           <Nav user_id={this.state.user_id}
                 user_first_name={ this.state.user_first_name }
                 logout = { this.logout }/>
-          <Route exact path='/' component={Home} />
+          <Route exact path='/' 
+            render = { (props) => <Home {...props}
+            searchUser = { this.searchUser }
+            user_search = { this.state.user_search }
+            /> } />
           <Route exact path='/login' component={LogIn} />
-          <Route exact path='/userSearch' component={UserSearch} />
+          <Route exact path='/userSearch' 
+            render = { (props) => <UserSearch {...props}
+            user_search = { this.state.user_search }
+            /> } 
+          />
           <Route exact path='/create/destination' 
                 render={ (props) => <CreatePage {...props} 
                 user_id={ this.state.user_id }

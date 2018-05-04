@@ -4,8 +4,8 @@ import axios from 'axios';
 
 class SearchUser extends Component {
     state = {
-        users : [],
-        search_user: ""
+        search_name: "",
+        user_serch: []
     }
 
     handleInputChange = (event) => {
@@ -16,16 +16,6 @@ class SearchUser extends Component {
             [name]: value
         });
     }
-
-    searchUser = () => {
-        const search = this.state.search_user;
-
-        axios.get(`/api/userSearch/${search}`).then((res) => {
-            this.setState({
-                users: res.data
-            })
-        });
-    };
     
     render() {
         return(
@@ -38,13 +28,16 @@ class SearchUser extends Component {
                         <div className='form-group'>
                             <input type='text' 
                                 className='form-control' 
-                                name='search_user'
+                                name='search_name'
                                 value={this.state.search_user} 
                                 onChange={this.handleInputChange}/>
-                            <button type="submit" 
+                            <Route render = {({history}) => (
+                                <button type="submit" 
                                 className="btn btn-default"
-                                onClick={this.searchUser}
+                                onClick={ () => {history.push(`/userSearch`);  
+                                this.props.searchUser() } }
                                 >Search</button>
+                            )} />
                         </div>
                     </div>
                 </div>

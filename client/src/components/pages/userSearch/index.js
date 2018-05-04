@@ -1,9 +1,23 @@
 import React, {Component} from 'react';
+import UserCard from '../../global/userCard';
 
 class UserSearch extends Component {
     render() {
         return(
-            <h1>Search for a user!</h1>
+            <div>
+                <h1>Search Results:</h1>
+                <div className='row'>
+                    {this.props.user_search.map(users => (
+                        <UserCard
+                            key={users.id}
+                            first_name={ users.first_name }
+                            last_name={ users.last_name }
+                            // img = {destination.image_url}
+                            // setDestination = {this.props.setDestination}
+                        />
+                    ))}
+                </div>
+            </div>
         )
     }
 }
