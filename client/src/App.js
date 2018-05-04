@@ -12,6 +12,7 @@ import CreatePOI from './components/pages/createPOI';
 import DestinationPage from './components/pages/destinationPage';
 import SignUpPage from './components/pages/signUpPage';
 import ProfilePage from './components/pages/profile';
+import SearchedUserProfile from './components/pages/searchedUserProfile';
 
 class App extends Component {
   state = {
@@ -31,7 +32,8 @@ class App extends Component {
     poi_image_url: "",
     user_destinations: [],
     search_name: "",
-    user_search: []
+    user_search: [],
+    searched_user: 0
   }
 
   // Set State with Logged-in User's data
@@ -89,6 +91,14 @@ class App extends Component {
     });
   };
 
+  setSearchedUser = (id) => {
+    // WRITE LOGIC FOR ON CLICK STORING THE ID OF THE USER SELECTED
+    // PASS ID TO PROFILE/ID PAGE TO RENDER DESTINATIONS SPECIFIC TO THAT USER
+    this.setState({
+      searched_user: id
+    });
+  };
+
   logout = () => {
     axios.get('/api/logout', function(req, res){
         console.log('LOGGED OUT!');
@@ -111,6 +121,7 @@ class App extends Component {
           <Route exact path='/userSearch' 
             render = { (props) => <UserSearch {...props}
             user_search = { this.state.user_search }
+            setSearchedUser = { this.setSearchedUser }
             /> } 
           />
           <Route exact path='/create/destination' 
@@ -139,6 +150,12 @@ class App extends Component {
                 user_destinations={ this.state.user_destinations }
                 getUserDestinations={ this.getUserDestinations }
                 setDestination={ this.setDestination } /> }
+          />
+          <Route path={`profile/:id`}
+                render={ (props) => <SearchedUserProfile {...props}
+                searched_user = {this.state.searched_user} 
+              /> }
+          
           />
         </div>
       </Router>

@@ -4,7 +4,7 @@ import {Route} from 'react-router-dom';
 
 class UserCard extends Component {
     clickHandler = () => {
-        // this.props.setDestination(this.props.destination);
+        this.props.setSearchedUser(this.props.id);
     }
 
   render() {
@@ -16,7 +16,7 @@ class UserCard extends Component {
             </div>
             <Route render = {({history}) => (
                 <div className="panel-body"
-                    onClick = { () => { history.push(`/destination/${this.props.id}/${this.props.destination}`); this.clickHandler() } }>
+                    onClick = { () => { history.push(`/profile/${this.props.key}`); this.clickHandler() } }>
                     <img className="card" alt={ this.props.id } src={ this.props.img } />
                 </div>
             )} />
