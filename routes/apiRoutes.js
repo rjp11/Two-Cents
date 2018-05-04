@@ -5,15 +5,23 @@ const passport = require("../config/passport");
 const db = require("../models/");
 
 const Sequelize = require('sequelize');
+// const sequelize = new Sequelize({
+//     database: 'two_cents_db',
+//     username: 'root',
+//     password: '',
+//     dialect: 'mysql'
+//   });
+
 const Op = Sequelize.Op;
 var env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
+const sequelize = new Sequelize(config.database, config.username, config.password, config);
 
-if (config.use_env_variable) {
-    const sequelize = new Sequelize(process.env[config.use_env_variable], config);
-} else {
-    const sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
+// if (config.use_env_variable) {
+//     const sequelize = new Sequelize(process.env[config.use_env_variable], config);
+// } else {
+//     const sequelize = new Sequelize(config.database, config.username, config.password, config);
+// }
 
 // GET ALL DESTINATIONS FROM DATABASE TO POPULATE THE DESTINATION PULLDOWN MENU ON CREATE DESTINATION PAGE
 router.get("/destinations", (req, res) => 
@@ -103,7 +111,7 @@ router.get('/userSearch/:name', (req, res) =>
 
 // ROUTE TO GET LIST OF USERS WITH A PAGE FOR A SEARCHED DESTINATION
 router.get('/destinationSearch/:destination', (req, res) => {
-    let query = `SELECT Users.first_name, Users.last_name FROM Users JOIN UserDestinations ON UserDestinations.user_id = Users_id WHERE UserDestinations.destination=${req.params.destination}`
+    let query = `SELECT Users.id, Users.first_name, Users.last_name FROM Users INNER JOIN UserDestinations ON Users.id = UserDestinations.user_id WHERE UserDestinations.destination='${req.params.destination}'`
 
     sequelize.query(query, {
         type: sequelize.QueryTypes.SELECT

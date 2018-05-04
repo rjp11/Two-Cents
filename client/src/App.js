@@ -102,7 +102,7 @@ class App extends Component {
           <Route exact path='/create/poi' 
                 render={ (props) => <CreatePOI {...props}
                 user_id={ this.state.user_id }
-                getUserDestinations = {this.getUserDestinations } 
+                getUserDestinations = { this.getUserDestinations } 
                 user_destinations = { this.state.user_destinations } /> }
                 />
           <Route path='/destination/:id'
