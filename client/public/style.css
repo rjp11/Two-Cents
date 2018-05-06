@@ -1,7 +1,3 @@
-.card-text{
-    font-family: 'Shadows Into Light', sans-serif;
-}
-
 .content {
     padding-top: 50px;
 }
@@ -11,4 +7,28 @@
     z-index: 500;
     top: 0;
     width: 100%;
+}
+
+.card {
+    margin-bottom: 25px;
+}
+.card-image {
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.card-text {
+    position: absolute;
+    width: 100%;
+    top: 30%;
+    z-index: 100;
+    height: 10%;
+    font-family: 'Shadows Into Light', sans-serif;
+}
+
+.card-title {
+    font-size: 9vw;
+    color: white;
 }
