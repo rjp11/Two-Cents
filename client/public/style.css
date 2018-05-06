@@ -6,6 +6,10 @@
     font-family: 'Shadows Into Light', sans-serif;
 }
 
+.sans-serif {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
 .navbar-inverse {
     position: fixed;
     z-index: 500;
@@ -96,4 +100,11 @@
 
 .poi-description {
     padding-top: 10px;
+}
+
+.form-panel {
+    margin-top: 100px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 50px;
+    border-radius: 10px;
 }

@@ -54,7 +54,7 @@ class CreatePOIForm extends Component {
                                 value={this.state.destination}
                                 onChange={this.handleInputChange}
                         >
-                            <option value="" disabled="disabled">Select one of your Destinations</option>
+                            <option value="" disabled="disabled">Select one of your destinations</option>
                             { allDestinations }
                         </select>
                     </div>
@@ -69,6 +69,7 @@ class CreatePOIForm extends Component {
                             <option value="Casual Eats">Casual Eats</option>
                             <option value="Fine Dining">Fine Dining</option>
                             <option value="Lodging">Lodging</option>
+                            <option value="Grab a Drink">Grab a Drink</option>
                             <option value="Shopping">Shopping</option>
                             <option value="Cultural Experience">Cultural Experience</option>
                         </select>    
@@ -85,7 +86,7 @@ class CreatePOIForm extends Component {
                     <div className="form-group">
                         <input type="text" 
                             className="form-control" 
-                            placeholder="Location Description"
+                            placeholder="Share some thoughts"
                             name="poi_description"
                             value={this.state.poi_description}
                             onChange={this.handleInputChange}

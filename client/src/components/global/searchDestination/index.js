@@ -27,25 +27,22 @@ class SearchDestination extends Component {
         
         return(
             <div className='col-lg-5'>
-                <div className='panel panel-default'>
-                    <div className='panel-heading'>
-                        Search for a Destination!
-                    </div>
-                    <div className='panel-body'>
+                <div className='form-panel'>
+                    <h1 className='sans-serif text-center'>Search for a Destination!</h1>
                         <form>
-                        <div className="form-group">
-                        <select className="form-control" 
-                            name="search_destination"
-                            value={this.state.destination}
-                            onChange={this.handleInputChange}>
+                            <div className="form-group">
+                                <select className="form-control" 
+                                    name="search_destination"
+                                    value={this.state.destination}
+                                    onChange={this.handleInputChange}>
 
-                            <option value="" disabled="disabled">Select a destination!</option>
-                            { allDestinations }
-                        </select>
-                        </div>
+                                    <option value="" disabled="disabled">Select a destination!</option>
+                                    { allDestinations }
+                                </select>
+                            </div>
                             <button type="submit" className="btn btn-default">Search</button>
                         </form>
-                    </div>
+                    
                 </div>
             </div>
         )

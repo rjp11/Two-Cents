@@ -26,16 +26,13 @@ class SearchUser extends Component {
     render() {
         return(
             <div className='col-lg-5'>
-                <div className='panel panel-default'>
-                    <div className='panel-heading'>
-                        Search for a User!
-                    </div>
-                    <div className='panel-body'>
-                        <div className='form-group'>
-                            <Route render = {({history}) => (
-                                <div>
+                <div className='form-panel'>
+                    <h1 className='sans-serif text-center'>Search for a User!</h1>
+                    <Route render = {({history}) => (
+                        <form>
+                            <div className="form-group">
                                 <input type='text' 
-                                    eclassName='form-control' 
+                                    className='form-control' 
                                     name='search_name'
                                     value={this.state.search_user} 
                                     onChange={this.handleInputChange}
@@ -44,11 +41,12 @@ class SearchUser extends Component {
                                     className="btn btn-default"
                                     onClick={ () => { history.push(`/userSearch`);  
                                     this.clickHandler() } }
-                                >Search</button>
-                                </div>)
-                            } />
-                        </div>
-                    </div>
+                                    >Search
+                                </button>
+                            </div>
+                        </form>)
+                    } />
+                        
                 </div>
             </div>
         )
