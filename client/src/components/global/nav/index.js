@@ -14,13 +14,11 @@ class Nav extends Component {
             <div className='navbar navbar-inverse'>
                 <ul className='nav navbar-nav'>
                     <li><Link to='/'><img id='logo' alt='two cents logo' src='https://github.com/rjp11/Two-Cents/blob/master/client/public/twocents.png?raw=true' /></Link> </li>
-                    {/* <li><Link to='/userSearch'>User Search</Link></li> */}
-                    <li><Link to='/create/destination'>Add a Trip Destination</Link></li>
-                    <li><Link to='/create/poi'>Add a Point of Interest</Link></li>
-                    {/* <li><Link to='/destination/:id'>Destination Page</Link></li> */}
                     <li><Link to='/profile'>My Pages</Link></li>
-                    {/* <li><Link to='/login'>Login</Link></li>
-                    <li onClick={ this.props.logout }><Link to='/'>Log Out</Link></li> */}
+                    <li>|</li>
+                    <li><Link to='/create/destination'>Add a Trip Destination</Link></li>
+                    <li>|</li>
+                    <li><Link to='/create/poi'>Add a Point of Interest</Link></li>
                 </ul>
             </div>
         )
