@@ -10,21 +10,20 @@ class ProfileCard extends Component {
 
   render() {
       return (
-        <div>
-            <div className="col-lg-2"></div>
-            <div className="col-lg-8">
+        <div className='col-lg-12'>
+        
                 <Route render = {({history}) => (
-                    <div className="card text-center" data-id={ this.props.id }
+                    <div className="destination card text-center" data-id={ this.props.id }
                         onClick = { () => { history.push(`/destination/${this.props.id}/${this.props.destination}`); this.clickHandler() } }>
+                        <div className='card-shade'>
+                        </div>
                         <div className="card-text">
-                            <p className='card-title'>{ this.props.destination.toUpperCase() }</p>
+                            <p className='card-title-big'>{ this.props.destination.toUpperCase() }</p>
                         </div>
                         <img className='card-image' alt={ this.props.id } src={ this.props.img } />
                     </div>     
                 )} />
-            </div>
         </div>
-            
       );
   }
 }

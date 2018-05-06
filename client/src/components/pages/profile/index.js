@@ -10,19 +10,28 @@ class ProfilePage extends Component {
     render() {
         return(
             <div className='content'>
-                <h1>{this.props.user_first_name}'s Pages</h1>
-                
-                    {this.props.user_destinations.map(destination => (
-                        <div className='row'>
-                            <ProfileCard
-                                key={destination.id}
-                                id={destination.id}
-                                destination={destination.destination}
-                                img = {destination.image_url}
-                                setDestination = {this.props.setDestination}
-                            />
-                        </div>
-                    ))}
+                <div className='row'>
+                    <div className='col-lg-2 text-center destination-text'>
+                        <p>{this.props.user_first_name.toUpperCase()}'s PAGES</p>
+                    </div>
+                </div>
+                <div className='row'>
+                    <div className='col-lg-2'>
+                    </div>
+                    <div className='col-lg-8'>
+                        {this.props.user_destinations.map(destination => (
+                            <div className='row'>
+                                <ProfileCard
+                                    key={destination.id}
+                                    id={destination.id}
+                                    destination={destination.destination}
+                                    img = {destination.image_url}
+                                    setDestination = {this.props.setDestination}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
         )
     }

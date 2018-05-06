@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import POIPanel from '../../global/poiPanel';
-import MyMapComponent from '../../global/map';
+// import MyMapComponent from '../../global/map';
 import axios from 'axios';
 
 
@@ -39,14 +39,14 @@ class DestinationPage extends Component {
         return(
             <div className='content'>
                 <div className='row'>
-                    <div className='col-lg-12 text-center'>
-                        <h1>{this.props.destination}</h1>
+                    <div className='col-lg-2 text-center destination-text'>
+                        <p>{this.props.destination.toUpperCase()}</p>
                     </div>
                 </div>
                 <div className='row'>
-                    <div className='col-lg-1'>
+                    <div className='col-lg-2'>
                     </div>
-                    <div className='col-lg-5' data-spy="scroll">
+                    <div className='col-lg-8' data-spy="scroll">
                         {this.state.pois.map(poi => (
                             <POIPanel
                                 key={poi.id}
@@ -58,7 +58,7 @@ class DestinationPage extends Component {
                             />
                         ))}
                     </div>
-                    <div className='col-lg-5'>
+                    {/* <div className='col-lg-5'>
                         <MyMapComponent
                             coord_lat={ this.state.coord_lat }
                             coord_long={this.state.coord_long }
@@ -67,7 +67,7 @@ class DestinationPage extends Component {
                         />
                     </div>
                     <div className='col-lg-1'>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         )
