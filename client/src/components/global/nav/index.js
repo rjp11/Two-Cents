@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import "./nav.css";
 import {Link} from 'react-router-dom';
 
 class Nav extends Component {
@@ -12,7 +13,7 @@ class Nav extends Component {
         return(
             <div className='navbar navbar-inverse'>
                 <ul className='nav navbar-nav'>
-                    <li><Link to='/'><img alt='two cents logo' src='/../../../../public/twocents.png' /></Link> </li>
+                    <li><Link to='/'><img id='logo' alt='two cents logo' src='https://github.com/rjp11/Two-Cents/blob/master/client/public/twocents.png?raw=true' /></Link> </li>
                     {/* <li><Link to='/userSearch'>User Search</Link></li> */}
                     <li><Link to='/create/destination'>Add a Trip Destination</Link></li>
                     <li><Link to='/create/poi'>Add a Point of Interest</Link></li>
