@@ -14,9 +14,9 @@ class Nav extends Component {
             <div className='navbar navbar-inverse'>
                 <ul className='nav navbar-nav'>
                     <li><Link to='/'><img id='logo' alt='two cents logo' src='https://github.com/rjp11/Two-Cents/blob/master/client/public/twocents.png?raw=true' /></Link> </li>
-                    <li><Link to='/profile'>My Pages</Link></li>
+                    <li><Link to='/profile'>My Destinations</Link></li>
                     <li>|</li>
-                    <li><Link to='/create/destination'>Add a Trip Destination</Link></li>
+                    <li><Link to='/create/destination'>Add a Destination</Link></li>
                     <li>|</li>
                     <li><Link to='/create/poi'>Add a Point of Interest</Link></li>
                 </ul>

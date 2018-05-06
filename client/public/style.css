@@ -2,6 +2,10 @@
     padding-top: 100px;
 }
 
+.handwritten {
+    font-family: 'Shadows Into Light', sans-serif;
+}
+
 .navbar-inverse {
     position: fixed;
     z-index: 500;
@@ -17,7 +21,7 @@
 }
 
 .destination, .poi {
-    margin-bottom: 25px;
+    margin-bottom: 40px;
 }
 
 .card-shade {
@@ -56,7 +60,7 @@
     top: 0;
     right: 0;
     z-index: 100;
-    background-color: rgba(37, 37, 37, 0.5);
+    background-color: rgba(37, 37, 37, 0.75);
     color: white;
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 1.5vw;
@@ -83,5 +87,13 @@
     position: fixed;
     top: 100px;
     font-family: 'Shadows Into Light', sans-serif;
-    font-size: 3vw;
+    font-size: 2.5vw;
+}
+
+.poi-name {
+    font-size: 40px;
+}
+
+.poi-description {
+    padding-top: 10px;
 }

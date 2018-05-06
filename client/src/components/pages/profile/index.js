@@ -12,7 +12,7 @@ class ProfilePage extends Component {
             <div className='content'>
                 <div className='row'>
                     <div className='col-lg-2 text-center destination-text'>
-                        <p>{this.props.user_first_name.toUpperCase()}'s PAGES</p>
+                        <p>{this.props.user_first_name.toUpperCase()}'s DESTINATIONS</p>
                     </div>
                 </div>
                 <div className='row'>
