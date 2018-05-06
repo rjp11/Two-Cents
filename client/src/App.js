@@ -18,6 +18,7 @@ class App extends Component {
   state = {
     user_id: 1,
     user_first_name: "Ryan",
+    user_last_name: "Parks",
     user_email: "",
     allDests: [],
     destination: "",
@@ -152,10 +153,11 @@ class App extends Component {
           <Route exact path='/signup' component={SignUpPage} />
           <Route exact path='/profile' 
                 render={ (props) => <ProfilePage {...props} 
-                user_id={ this.state.user_id }
-                user_destinations={ this.state.user_destinations }
-                getUserDestinations={ this.getUserDestinations }
-                setDestination={ this.setDestination } /> }
+                user_first_name = { this.state.user_first_name }
+                user_last_name = { this.state.user_last_name }
+                user_destinations = { this.state.user_destinations }
+                getUserDestinations = { this.getUserDestinations }
+                setDestination = { this.setDestination } /> }
           />
           <Route path={`profile/:id`}
                 render={ (props) => <SearchedUserProfile {...props}
