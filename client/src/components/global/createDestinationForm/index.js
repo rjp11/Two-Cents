@@ -48,8 +48,8 @@ class CreateDestinationForm extends Component {
                         <select className="form-control" 
                             name="destination"
                             value={this.state.destination}
-                            onChange={this.handleInputChange}
-                        >
+                            onChange={this.handleInputChange}>
+                            
                             <option value="" disabled="disabled">Select a destination!</option>
                             { allDestinations }
                         </select>

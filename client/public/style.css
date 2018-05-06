@@ -1,3 +1,14 @@
 .panel-heading h1, .panel-heading h3 {
     font-family: 'Shadows Into Light', sans-serif;
 }
+
+.content {
+    padding-top: 50px;
+}
+
+.navbar-inverse {
+    position: fixed;
+    z-index: 500;
+    top: 0;
+    width: 100%;
+}

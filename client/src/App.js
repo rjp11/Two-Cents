@@ -119,6 +119,9 @@ class App extends Component {
             searchUser = { this.searchUser }
             search_name =  { this.state.search_name }
             user_search = { this.state.user_search }
+            getAllDestinations = { this.getAllDestinations }
+            allDests={ this.state.allDests }
+            handleInputChange = { this.handleInputChange }
             /> } />
           <Route exact path='/login' component={LogIn} />
           <Route exact path='/userSearch' 

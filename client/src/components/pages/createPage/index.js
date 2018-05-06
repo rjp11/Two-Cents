@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-// import CreatePageNav from '../../global/createPageNav';
 import CreateDestinationForm from '../../global/createDestinationForm';
 
 class CreatePage extends Component {
     render() {
         return(
-            <div>
+            <div className='content'>
                 <h1>Create a page!</h1>
                 <CreateDestinationForm 
                     user_id={this.props.user_id}

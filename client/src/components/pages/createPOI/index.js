@@ -5,7 +5,7 @@ import CreatePOIForm from '../../global/createPOIForm';
 class CreatePOI extends Component {
     render() {
         return(
-            <div>
+            <div className='content'>
                 <h1>Add to a page!</h1>
                 <CreatePOIForm 
                     user_id={ this.props.user_id }

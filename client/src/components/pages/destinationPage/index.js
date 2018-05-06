@@ -37,7 +37,7 @@ class DestinationPage extends Component {
     
     render() {
         return(
-            <div>
+            <div className='content'>
                 <div className='row'>
                     <div className='col-lg-12 text-center'>
                         <h1>{this.props.destination}</h1>

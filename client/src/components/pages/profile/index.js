@@ -9,7 +9,7 @@ class ProfilePage extends Component {
    
     render() {
         return(
-            <div>
+            <div className='content'>
                 <h1>User #{this.props.user_id}'s Pages</h1>
                 
                     {this.props.user_destinations.map(destination => (

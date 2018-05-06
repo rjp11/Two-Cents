@@ -6,7 +6,7 @@ import SearchDestination from '../../global/searchDestination';
 class Home extends Component {
     render() {
         return(
-            <div>
+            <div className="conent">
                 <div className='row text-center'>
                     <div className='col-lg-1'></div>
                     <div className='col-lg-10'>
@@ -20,7 +20,11 @@ class Home extends Component {
                         searchUser={ this.props.searchUser }
                         user_search={ this.props.user_search }
                     />
-                    <SearchDestination />
+                    <SearchDestination 
+                        getAllDestinations = { this.props.getAllDestinations }
+                        handleInputChange = { this.props.handleInputChange }
+                        allDests = { this.props.allDests }
+                    />
                 </div>
             </div>
         )
