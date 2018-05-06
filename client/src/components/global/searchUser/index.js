@@ -5,7 +5,7 @@ import axios from 'axios';
 class SearchUser extends Component {
     state = {
         search_name: "",
-        user_serch: []
+        user_search: []
     }
 
     handleInputChange = (event) => {
@@ -15,6 +15,12 @@ class SearchUser extends Component {
         this.setState({
             [name]: value
         });
+    }
+
+    clickHandler = () => {
+        this.props.searchUser();
+        //  CHECK THIS ONE OUT \/
+        this.props.setSearchName(this.state.search_name);
     }
     
     render() {
@@ -26,18 +32,21 @@ class SearchUser extends Component {
                     </div>
                     <div className='panel-body'>
                         <div className='form-group'>
-                            <input type='text' 
-                                className='form-control' 
-                                name='search_name'
-                                value={this.state.search_user} 
-                                onChange={this.handleInputChange}/>
                             <Route render = {({history}) => (
+                                <div>
+                                <input type='text' 
+                                    eclassName='form-control' 
+                                    name='search_name'
+                                    value={this.state.search_user} 
+                                    onChange={this.handleInputChange}
+                                />
                                 <button type="submit" 
-                                className="btn btn-default"
-                                onClick={ () => {history.push(`/userSearch`);  
-                                this.props.searchUser() } }
+                                    className="btn btn-default"
+                                    onClick={ () => { history.push(`/userSearch`);  
+                                    this.clickHandler() } }
                                 >Search</button>
-                            )} />
+                                </div>)
+                            } />
                         </div>
                     </div>
                 </div>

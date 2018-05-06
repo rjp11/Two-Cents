@@ -85,9 +85,16 @@ class App extends Component {
     const search = this.state.search_name;
 
     axios.get(`/api/userSearch/${search}`).then((res) => {
-        this.setState({
-            user_search: res.data
-        })
+      console.log(res);
+      this.setState({
+        user_search: res.data
+      })
+    });
+  };
+
+  setSearchName = (name) => {
+    this.setState({
+      search_name: name
     });
   };
 
@@ -99,12 +106,6 @@ class App extends Component {
     });
   };
 
-  logout = () => {
-    axios.get('/api/logout', function(req, res){
-        console.log('LOGGED OUT!');
-    })
-  }
-
   render() {
     return (
       <Router>
@@ -114,7 +115,9 @@ class App extends Component {
                 logout = { this.logout }/>
           <Route exact path='/' 
             render = { (props) => <Home {...props}
+            setSearchName = { this.setSearchName }
             searchUser = { this.searchUser }
+            search_name =  { this.state.search_name }
             user_search = { this.state.user_search }
             /> } />
           <Route exact path='/login' component={LogIn} />

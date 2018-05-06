@@ -16,6 +16,7 @@ class Home extends Component {
                 <div className='row text-center'>
                     <div className='col-lg-1'></div>
                     <SearchUser 
+                        setSearchName = { this.props.setSearchName }
                         searchUser={ this.props.searchUser }
                         user_search={ this.props.user_search }
                     />
