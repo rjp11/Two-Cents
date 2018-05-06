@@ -11,17 +11,18 @@ class ProfilePage extends Component {
         return(
             <div>
                 <h1>User #{this.props.user_id}'s Pages</h1>
-                <div className='row'>
+                
                     {this.props.user_destinations.map(destination => (
-                        <ProfileCard
-                            key={destination.id}
-                            id={destination.id}
-                            destination={destination.destination}
-                            img = {destination.image_url}
-                            setDestination = {this.props.setDestination}
-                        />
+                        <div className='row'>
+                            <ProfileCard
+                                key={destination.id}
+                                id={destination.id}
+                                destination={destination.destination}
+                                img = {destination.image_url}
+                                setDestination = {this.props.setDestination}
+                            />
+                        </div>
                     ))}
-                </div>
             </div>
         )
     }

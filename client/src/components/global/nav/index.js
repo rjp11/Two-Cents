@@ -12,7 +12,7 @@ class Nav extends Component {
         return(
             <div className='navbar navbar-inverse'>
                 <ul className='nav navbar-nav'>
-                    <li><Link to='/'>Home</Link> </li>
+                    <li><Link to='/'><img alt='two cents logo' src='/../../../../public/twocents.png' /></Link> </li>
                     {/* <li><Link to='/userSearch'>User Search</Link></li> */}
                     <li><Link to='/create/destination'>Add a Trip Destination</Link></li>
                     <li><Link to='/create/poi'>Add a Point of Interest</Link></li>
