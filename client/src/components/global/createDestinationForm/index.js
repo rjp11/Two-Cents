@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Route} from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -43,6 +44,8 @@ class CreateDestinationForm extends Component {
         });
 
         return (
+            <div>
+                <Route render = {({history}) => (
                 <form>
                     <div className="form-group">
                         <select className="form-control" 
@@ -73,10 +76,12 @@ class CreateDestinationForm extends Component {
                         />
                     </div>
                     <button type="submit" 
-                        className="btn btn-default" 
-                        onClick={this.addDestinationHandler}
+                            className="btn btn-default" 
+                            onClick={ () => {history.push(`/create/poi`);
+                                this.addDestinationHandler()}}
                     >Submit</button>
-                </form>
+                </form>) }/>
+            </div>
         )
     }
 }

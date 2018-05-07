@@ -26,7 +26,7 @@ class SearchUser extends Component {
     render() {
         return(
             <div>
-                <div className='hidden-lg col-md-2 col-sm-2'></div>
+                <div className='hidden-lg col-md-2 col-sm-2 hidden-xs'></div>
                 <div className='col-lg-5 col-md-8 col-sm-8'>
                     <div className='form-panel'>
                         <h1 className='form-title sans-serif text-center'>Search for a User!</h1>
