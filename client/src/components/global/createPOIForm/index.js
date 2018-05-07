@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Route} from 'react-router-dom';
 import axios from 'axios';
 
 class CreatePOIForm extends Component {
@@ -47,67 +48,72 @@ class CreatePOIForm extends Component {
         });
 
         return (
-                <form>
-                    <div className="form-group">
-                        <select className="form-control" 
+            <div>
+                <Route render = {({history}) => (
+                    <form>
+                        <div className="form-group">
+                            <select className="form-control" 
                                 name="destination"
                                 value={this.state.destination}
                                 onChange={this.handleInputChange}
-                        >
-                            <option value="" disabled="disabled">Select one of your destinations</option>
-                            { allDestinations }
-                        </select>
-                    </div>
-                    <div className="form-group">
-                        <select className="form-control" 
-                        placeholder="Location Type"
-                        name="poi_type"
-                        value={this.state.poi_type}
-                        onChange={this.handleInputChange}
-                        >
-                            <option value="" disabled="disabled">Select type of location</option>
-                            <option value="Casual Eats">Casual Eating</option>
-                            <option value="Fine Dining">Fine Dining</option>
-                            <option value="Lodging">Lodging</option>
-                            <option value="Grab a Drink">Lounging</option>
-                            <option value="Shopping">Shopping</option>
-                            <option value="Cultural Experience">Enriching</option>
-                        </select>    
-                    </div>
-                    <div className="form-group">
-                        <input type="text" 
-                            className="form-control" 
-                            placeholder="Location Name"
-                            name="poi_name"
-                            value={this.state.poi_name}
-                            onChange={this.handleInputChange}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input type="text" 
-                            className="form-control" 
-                            placeholder="Share some thoughts"
-                            name="poi_description"
-                            value={this.state.poi_description}
-                            onChange={this.handleInputChange}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input type="text" 
-                            className="form-control" 
-                            placeholder="Image Link"
-                            name="poi_image_url"
-                            value={this.state.poi_image_url}
-                            onChange={this.handleInputChange}
-                        />
-                    </div>
+                            >
+                                <option value="" disabled="disabled">Select one of your destinations</option>
+                                { allDestinations }
+                            </select>
+                        </div>
+                        <div className="form-group">
+                            <select className="form-control" 
+                                placeholder="Location Type"
+                                name="poi_type"
+                                value={this.state.poi_type}
+                                onChange={this.handleInputChange}
+                            >
+                                <option value="" disabled="disabled">Select type of location</option>
+                                <option value="Casual Eats">Casual Eating</option>
+                                <option value="Fine Dining">Fine Dining</option>
+                                <option value="Lodging">Lodging</option>
+                                <option value="Grab a Drink">Lounging</option>
+                                <option value="Shopping">Shopping</option>
+                                <option value="Cultural Experience">Enriching</option>
+                            </select>    
+                        </div>
+                        <div className="form-group">
+                            <input type="text" 
+                                className="form-control" 
+                                placeholder="Location Name"
+                                name="poi_name"
+                                value={this.state.poi_name}
+                                onChange={this.handleInputChange}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input type="text" 
+                                className="form-control" 
+                                placeholder="Share some thoughts"
+                                name="poi_description"
+                                value={this.state.poi_description}
+                                onChange={this.handleInputChange}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input type="text" 
+                                className="form-control" 
+                                placeholder="Image Link"
+                                name="poi_image_url"
+                                value={this.state.poi_image_url}
+                                onChange={this.handleInputChange}
+                            />
+                        </div>
 
 
-                    <button type="submit" 
-                        className="btn btn-default"
-                        onClick={this.addPOIHandler}
-                    >Submit</button>
-                </form>
+                        <button type="submit" 
+                            className="btn btn-default"
+                            onClick={ () => {history.push(`/profile`)
+                                this.addPOIHandler()}}
+                        >Submit</button>
+                    </form>
+                )}/>
+            </div> 
         )
     }
 }

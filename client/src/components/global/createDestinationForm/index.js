@@ -46,41 +46,42 @@ class CreateDestinationForm extends Component {
         return (
             <div>
                 <Route render = {({history}) => (
-                <form>
-                    <div className="form-group">
-                        <select className="form-control" 
-                            name="destination"
-                            value={this.state.destination}
-                            onChange={this.handleInputChange}>
-                            
-                            <option value="" disabled="disabled">Select a destination!</option>
-                            { allDestinations }
-                        </select>
-                    </div>
-                    <div className="form-group">
-                        <input type="text" 
-                            className="form-control" 
-                            placeholder="Destination Notes"
-                            name="notes"
-                            value={this.state.notes}
-                            onChange={this.handleInputChange}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input type="text" 
-                            className="form-control" 
-                            placeholder="Cover Photo URL"
-                            name="image_url"
-                            value={this.state.image_url}
-                            onChange={this.handleInputChange}
-                        />
-                    </div>
-                    <button type="submit" 
-                            className="btn btn-default" 
-                            onClick={ () => {history.push(`/create/poi`);
-                                this.addDestinationHandler()}}
-                    >Submit</button>
-                </form>) }/>
+                    <form>
+                        <div className="form-group">
+                            <select className="form-control" 
+                                name="destination"
+                                value={this.state.destination}
+                                onChange={this.handleInputChange}>
+                                
+                                <option value="" disabled="disabled">Select a destination!</option>
+                                { allDestinations }
+                            </select>
+                        </div>
+                        <div className="form-group">
+                            <input type="text" 
+                                className="form-control" 
+                                placeholder="Destination Notes"
+                                name="notes"
+                                value={this.state.notes}
+                                onChange={this.handleInputChange}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input type="text" 
+                                className="form-control" 
+                                placeholder="Cover Photo URL"
+                                name="image_url"
+                                value={this.state.image_url}
+                                onChange={this.handleInputChange}
+                            />
+                        </div>
+                        <button type="submit" 
+                                className="btn btn-default" 
+                                onClick={ () => {history.push(`/create/poi`);
+                                    this.addDestinationHandler()}}
+                        >Submit</button>
+                    </form>
+                ) }/>
             </div>
         )
     }
