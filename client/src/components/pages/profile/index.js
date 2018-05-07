@@ -20,7 +20,7 @@ class ProfilePage extends Component {
                     </div>
                     <div className='col-lg-8'>
                         {this.props.user_destinations.map(destination => (
-                            <div className='row'>
+                            <div key={destination.id} className='row'>
                                 <ProfileCard
                                     key={destination.id}
                                     id={destination.id}

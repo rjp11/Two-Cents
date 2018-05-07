@@ -9,8 +9,8 @@ class CreatePage extends Component {
                     <div className='col-lg-3'>
                     </div>
                     <div className='col-lg-6'>
-                        <div className='form-panel'>
-                            <h1 className='sans-serif text-center'>Create a Page</h1>
+                        <div className='form-panel text-center'>
+                            <h1 className='form-title sans-serif text-center'>Create a Page</h1>
                             <CreateDestinationForm 
                                 user_id={this.props.user_id}
                                 getAllDestinations={this.props.getAllDestinations}

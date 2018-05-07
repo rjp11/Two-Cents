@@ -10,8 +10,8 @@ class CreatePOI extends Component {
                     <div className='col-lg-3'>
                     </div>
                     <div className='col-lg-6'>
-                        <div className='form-panel'>
-                            <h1 className='sans-serif text-center'>Share One of Your Favorite Spots</h1>
+                        <div className='form-panel text-center'>
+                            <h1 className='form-title sans-serif text-center'>Share One of Your Favorite Spots</h1>
                             <CreatePOIForm 
                                 user_id={ this.props.user_id }
                                 destination= { this.props.destination }

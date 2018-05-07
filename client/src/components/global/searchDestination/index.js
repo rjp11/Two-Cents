@@ -26,23 +26,26 @@ class SearchDestination extends Component {
         });
         
         return(
-            <div className='col-lg-5'>
-                <div className='form-panel'>
-                    <h1 className='sans-serif text-center'>Search for a Destination!</h1>
-                        <form>
-                            <div className="form-group">
-                                <select className="form-control" 
-                                    name="search_destination"
-                                    value={this.state.destination}
-                                    onChange={this.handleInputChange}>
+            <div>
+                <div className='hidden-lg col-md-2 col-sm-2'></div>
+                <div className='col-lg-5 col-md-8 col-sm-8'>
+                    <div className='form-panel'>
+                        <h1 className='form-title sans-serif text-center'>Search for a Destination!</h1>
+                            <form>
+                                <div className="form-group">
+                                    <select className="form-control" 
+                                        name="search_destination"
+                                        value={this.state.destination}
+                                        onChange={this.handleInputChange}>
 
-                                    <option value="" disabled="disabled">Select a destination!</option>
-                                    { allDestinations }
-                                </select>
-                            </div>
-                            <button type="submit" className="btn btn-default">Search</button>
-                        </form>
-                    
+                                        <option value="" disabled="disabled">Select a destination!</option>
+                                        { allDestinations }
+                                    </select>
+                                </div>
+                                <button type="submit" className="btn btn-default">Search</button>
+                            </form>
+                        
+                    </div>
                 </div>
             </div>
         )

@@ -25,28 +25,30 @@ class SearchUser extends Component {
     
     render() {
         return(
-            <div className='col-lg-5'>
-                <div className='form-panel'>
-                    <h1 className='sans-serif text-center'>Search for a User!</h1>
-                    <Route render = {({history}) => (
-                        <form>
-                            <div className="form-group">
-                                <input type='text' 
-                                    className='form-control' 
-                                    name='search_name'
-                                    value={this.state.search_user} 
-                                    onChange={this.handleInputChange}
-                                />
+            <div>
+                <div className='hidden-lg col-md-2 col-sm-2'></div>
+                <div className='col-lg-5 col-md-8 col-sm-8'>
+                    <div className='form-panel'>
+                        <h1 className='form-title sans-serif text-center'>Search for a User!</h1>
+                        <Route render = {({history}) => (
+                            <form>
+                                <div className="form-group">
+                                    <input type='text' 
+                                        className='form-control' 
+                                        name='search_name'
+                                        value={this.state.search_user} 
+                                        onChange={this.handleInputChange}
+                                    />
+                                </div>
                                 <button type="submit" 
                                     className="btn btn-default"
                                     onClick={ () => { history.push(`/userSearch`);  
                                     this.clickHandler() } }
                                     >Search
                                 </button>
-                            </div>
-                        </form>)
-                    } />
-                        
+                            </form>)
+                        } />   
+                    </div>
                 </div>
             </div>
         )

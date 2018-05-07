@@ -66,12 +66,12 @@ class CreatePOIForm extends Component {
                         onChange={this.handleInputChange}
                         >
                             <option value="" disabled="disabled">Select type of location</option>
-                            <option value="Casual Eats">Casual Eats</option>
+                            <option value="Casual Eats">Casual Eating</option>
                             <option value="Fine Dining">Fine Dining</option>
                             <option value="Lodging">Lodging</option>
-                            <option value="Grab a Drink">Grab a Drink</option>
+                            <option value="Grab a Drink">Lounging</option>
                             <option value="Shopping">Shopping</option>
-                            <option value="Cultural Experience">Cultural Experience</option>
+                            <option value="Cultural Experience">Enriching</option>
                         </select>    
                     </div>
                     <div className="form-group">

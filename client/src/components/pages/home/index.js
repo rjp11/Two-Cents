@@ -10,13 +10,17 @@ class Home extends Component {
             <div className="content background-image">
                 <div className='row'>
                     <div className='col-lg-12 text-center'>
-                        <h1 className='handwritten'>Two Cents Travel <span><img className='logo' src='https://github.com/rjp11/Two-Cents/blob/master/client/public/twocents.png?raw=true'/></span></h1>
+                        <h1 className='sans-serif title'>Two Cents Travel <span><img className='logo' alt='two cents logo' src='https://github.com/rjp11/Two-Cents/blob/master/client/public/twocents.png?raw=true'/></span></h1>
                     </div>
                 </div>
-                <div className='row text-center'>
-                    <div className='col-lg-1'></div>
-                    <div className='col-lg-10'>
-                        {/* <img alt="News stand in Catania, Sicily" src='https://github.com/rjp11/Two-Cents/blob/master/client/public/mallorca.jpg?raw=true' /> */}
+                <div className='row'>
+                    <div className='col-lg-4'></div>
+                    <div className='col-lg-4'>
+                        <p className='sans-serif sub-title text-center'>Find information for an upcoming trip and share your own two cents with others.</p>
+                    </div>
+                </div>
+                <div className='row'>
+                    <div className='spacer col-lg-12 hidden-md hidden-sm hidden-xs'>
                     </div>
                 </div>
                 <div className='row text-center'>
