@@ -1,3 +1,122 @@
-.panel-heading h1, .panel-heading h3 {
-    font-family: Architects Daughter, sans-serif;
+.content {
+    padding-top: 100px;
+}
+
+.background-image {
+    background-image: url('https://github.com/rjp11/Two-Cents/blob/master/client/public/mallorca.jpg?raw=true');
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.handwritten {
+    font-family: 'Shadows Into Light', sans-serif;
+}
+
+.sans-serif {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.navbar-inverse {
+    position: fixed;
+    z-index: 500;
+    top: 0;
+    width: 100%;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 28px;
+}
+
+.form-title {
+    margin-bottom: 40px;
+    font-size: 40px;
+}
+
+.card {
+    font-family: 'Shadows Into Light', sans-serif;
+    position: relative;
+}
+
+.destination, .poi {
+    margin-bottom: 40px;
+}
+
+.card-shade {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(37, 37, 37, 0.3);
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+
+.card-shade :hover {
+    display: inline;
+}
+
+.card-image {
+    width: 100%;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.card-text {
+    position: absolute;
+    width: 100%;
+    top: 18%;
+    z-index: 100;
+    height: 10%;
+    color: white;
+}
+
+.card-type {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba(37, 37, 37, 0.6);
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.5vw;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.card-title-big {
+    font-size: 9vw;
+}
+
+.card-title-small {
+    font-size: 4vw;
+}
+
+.card-description {
+    background-color: white;
+    z-index: 500;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 32px;
+}
+
+.destination-text {
+    position: fixed;
+    top: 100px;
+    font-family: 'Shadows Into Light', sans-serif;
+    font-size: 2.5vw;
+}
+
+.poi-name {
+    font-size: 40px;
+}
+
+.poi-description {
+    padding-top: 10px;
+}
+
+.form-panel {
+    margin-top: 100px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 50px;
+    border-radius: 10px;
 }
