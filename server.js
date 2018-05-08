@@ -6,12 +6,8 @@ const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const apiRoutes = require("./routes/apiRoutes");
-const htmlRoutes = require("./routes/htmlRoutes")
 // for sequelize ORM
 const db = require("./models");
-// for passport and authentication
-const session = require("express-session");
-const passport = require("./config/passport");
 
 // Serve up static assets
 app.use(express.static("client/public"));
@@ -24,10 +20,6 @@ app.use(bodyParser.json());
 //   app.use(express.static("client/build"));
 // }
 
-// We need to use sessions to keep track of our user's login status
-app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
-app.use(passport.initialize());
-app.use(passport.session());
 
 // Use apiRoutes
 app.use("/api", apiRoutes);
