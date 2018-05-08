@@ -72,9 +72,10 @@ class CreatePOIForm extends Component {
                                 <option value="Casual Eats">Casual Eating</option>
                                 <option value="Fine Dining">Fine Dining</option>
                                 <option value="Lodging">Lodging</option>
-                                <option value="Grab a Drink">Lounging</option>
+                                <option value="Lounging">Lounging</option>
                                 <option value="Shopping">Shopping</option>
-                                <option value="Cultural Experience">Enriching</option>
+                                <option value="Enriching">Enriching</option>
+                                <option value='Strolling'>Strolling</option>
                             </select>    
                         </div>
                         <div className="form-group">
