@@ -1,15 +1,15 @@
 {
   "name": "mern",
   "version": "1.0.0",
-  "description": "",
+  "description": "Two Cents",
   "main": "server.js",
   "scripts": {
     "server": "node server.js",
-    "client": "node scripts/start-client.js",
-    "start": "concurrently \"nodemon server.js\" \"yarn client\"",
-    "build": "node scripts/build.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "installDeps": "yarn && cd client && yarn"
+    "client": "cd client && npm run start",
+    "start": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"npm run client\"",
+    "build": "cd client && npm run build",
+    "deploy": "yarn build && git add . && git commit -m \"Building for production\" && git push heroku master",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",

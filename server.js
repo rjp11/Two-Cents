@@ -9,22 +9,17 @@ const apiRoutes = require("./routes/apiRoutes");
 // for sequelize ORM
 const db = require("./models");
 
-// Serve up static assets
-app.use(express.static("client/public"));
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
+// Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-
-// Use apiRoutes
 app.use("/api", apiRoutes);
-// Use HTML Routes
-// app.use(htmlRoutes);
 
 // Send every request to the React app
 // Define any API routes before this runs
@@ -32,8 +27,6 @@ app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-db.sequelize.sync().then(function(){
-  app.listen(PORT, function(){
-    console.log(`🌎 ==> Server now on port ${PORT}!`);
-  });
+app.listen(PORT, function() {
+  console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
