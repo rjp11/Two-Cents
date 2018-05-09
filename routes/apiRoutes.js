@@ -103,7 +103,10 @@ router.get('/userSearch/:name', (req, res) =>
     db.User.findAll({
         where: {
             first_name: req.params.name
-        }
+        },
+        attributes: [
+            'id', 'first_name', 'last_name'
+        ]
     }).then(dbSearchedUsers => 
         res.json(dbSearchedUsers))
 );
