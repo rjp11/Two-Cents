@@ -4,7 +4,7 @@ import CreateDestinationForm from '../../global/createDestinationForm';
 class CreatePage extends Component {
     render() {
         return(
-            <div className='content market'>
+            <div className='content background-market'>
                 <div className='row'>
                     <div className='col-lg-3'>
                     </div>

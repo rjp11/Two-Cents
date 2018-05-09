@@ -2,7 +2,7 @@
     padding-top: 100px;
 }
 
-.background-image {
+.background-mallorca {
     background-image: url('https://github.com/rjp11/Two-Cents/blob/master/client/public/mallorca.jpg?raw=true');
     width: 100%;
     height: 100vh;
@@ -10,7 +10,7 @@
     background-position: center top;
 }
 
-.market {
+.background-market {
     background-image: url('https://github.com/rjp11/Two-Cents/blob/master/client/public/market.jpg?raw=true');
     width: 100%;
     height: 100vh;
@@ -124,7 +124,7 @@
 
 .form-panel {
     margin-top: 100px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.85);
     padding: 50px;
     border-radius: 10px;
 }

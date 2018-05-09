@@ -5,7 +5,7 @@ import CreatePOIForm from '../../global/createPOIForm';
 class CreatePOI extends Component {
     render() {
         return(
-            <div className='content market'>
+            <div className='content background-market'>
                 <div className='row'>
                     <div className='col-lg-3'>
                     </div>

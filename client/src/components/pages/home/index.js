@@ -7,10 +7,10 @@ import './home.css'
 class Home extends Component {
     render() {
         return(
-            <div className="content background-image">
+            <div className="content background-mallorca">
                 <div className='row'>
                     <div className='col-lg-12 text-center'>
-                        <h1 className='sans-serif title'>Two Cents Travel <span><img className='logo' alt='two cents logo' src='https://github.com/rjp11/Two-Cents/blob/master/client/public/twocents.png?raw=true'/></span></h1>
+                        <h1 className='sans-serif title'>Two Cents Travel<span><img className='logo' alt='two cents logo' src='https://github.com/rjp11/Two-Cents/blob/master/client/public/twocents.png?raw=true'/></span></h1>
                     </div>
                 </div>
                 <div className='row'>
