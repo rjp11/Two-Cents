@@ -29,7 +29,7 @@ class SearchDestination extends Component {
             <div>
                 <div className='col-lg-5 col-md-8 col-sm-8'>
                     <div className='form-panel'>
-                        <h1 className='form-title sans-serif text-center'>Search for a Destination!</h1>
+                        <h1 className='form-title sans-serif text-center'>Search for a Destination</h1>
                             <form>
                                 <div className="form-group">
                                     <select className="form-control" 

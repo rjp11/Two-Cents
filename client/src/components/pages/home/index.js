@@ -28,7 +28,7 @@ class Home extends Component {
                     <SearchUser 
                         setSearchName = { this.props.setSearchName }
                         searchUser={ this.props.searchUser }
-                        user_search={ this.props.user_search }
+                        user_search_res={ this.props.user_search_res}
                     />
                     <SearchDestination 
                         getAllDestinations = { this.props.getAllDestinations }

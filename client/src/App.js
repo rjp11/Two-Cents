@@ -33,7 +33,7 @@ class App extends Component {
     poi_image_url: "",
     user_destinations: [],
     search_name: "",
-    user_search: [],
+    user_search_res: [],
     searched_user: 0
   }
 
@@ -119,7 +119,7 @@ class App extends Component {
             setSearchName = { this.setSearchName }
             searchUser = { this.searchUser }
             search_name =  { this.state.search_name }
-            user_search = { this.state.user_search }
+            user_search_res = { this.state.user_search_res }
             getAllDestinations = { this.getAllDestinations }
             allDests={ this.state.allDests }
             handleInputChange = { this.handleInputChange }

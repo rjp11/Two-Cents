@@ -29,7 +29,7 @@ class SearchUser extends Component {
                 <div className='hidden-lg col-md-2 col-sm-2 hidden-xs'></div>
                 <div className='col-lg-5 col-md-8 col-sm-8'>
                     <div className='form-panel'>
-                        <h1 className='form-title sans-serif text-center'>Search for a User!</h1>
+                        <h1 className='form-title sans-serif text-center'>Find a Traveler</h1>
                         <Route render = {({history}) => (
                             <form>
                                 <div className="form-group">
